@@ -1,0 +1,3 @@
+[submodule "deep"]
+	path = deep
+	url = git@github:ichiroprogrammer/deep_cpp.git
