@@ -42,26 +42,12 @@
 
 通常、このようなツールの開発にはpythonやrubyが適しているが、
 このドキュメントの目的に合わせて、depsはC++で開発し、
-コードツリーは、 [ディレクトリ、ファイル構成](deps.md#SS_1_2)に掲載する。
+コードツリーは、 [ディレクトリ、ファイル構成](---)に掲載する。
 
 ---
 __この章の構成__
 
-&emsp;&emsp; [depsの使い方](deps.md#SS_1_1)  
-&emsp;&emsp;&emsp; [ユースケース-循環依存を発見した場合、非0でexitする](deps.md#SS_1_1_1)  
-&emsp;&emsp;&emsp; [ユースケース-C++のソースコードを含むディレクトリを探す](deps.md#SS_1_1_2)  
-&emsp;&emsp;&emsp; [ユースケース-ディレクトリをパッケージとみなして、パッケージとソースコードの関係を示す](deps.md#SS_1_1_3)  
-&emsp;&emsp;&emsp; [ユースケース-パッケージ間の依存関係を示す](deps.md#SS_1_1_4)  
-&emsp;&emsp;&emsp; [ユースケース-パッケージ間の依存関係を構造的に表す](deps.md#SS_1_1_5)  
-&emsp;&emsp;&emsp; [ユースケース-パッケージ間の依存関係をplant umlで表す](deps.md#SS_1_1_6)  
-&emsp;&emsp;&emsp; [ユースケース-ソースコード間の依存関係をplant umlで表す](deps.md#SS_1_1_7)  
-&emsp;&emsp;&emsp; [ユースケース-パッケージでないディレクトリをそれとみなさない](deps.md#SS_1_1_8)  
-&emsp;&emsp;&emsp; [ユースケース-depsを用いてdepsの依存関係を調べる](deps.md#SS_1_1_9)  
-
-&emsp;&emsp; [ディレクトリ、ファイル構成](deps.md#SS_1_2)  
-&emsp;&emsp; [makeによる依存関係の維持](deps.md#SS_1_3)  
-  
-  
+<!-- index 1-3 -->
 
 
 ## depsの使い方 <a id="SS_1_1"></a>
@@ -103,15 +89,15 @@ depsの仕様は入り組んでいるため、細かく機能を説明するよ�
 以下の各ユースケースで使い方を示した方がdepsの理解が容易であると判断した。
 
 
-* [ユースケース-循環依存を発見した場合、非0でexitする](deps.md#SS_1_1_1)
-* [ユースケース-C++のソースコードを含むディレクトリを探す](deps.md#SS_1_1_2)
-* [ユースケース-ディレクトリをパッケージとみなして、パッケージとソースコードの関係を示す](deps.md#SS_1_1_3)
-* [ユースケース-パッケージ間の依存関係を示す](deps.md#SS_1_1_4)
-* [ユースケース-パッケージ間の依存関係を構造的に表す](deps.md#SS_1_1_5)
-* [ユースケース-パッケージ間の依存関係をplant umlで表す](deps.md#SS_1_1_6)
-* [ユースケース-ソースコード間の依存関係をplant umlで表す](deps.md#SS_1_1_7)
-* [ユースケース-パッケージでないディレクトリをそれとみなさない](deps.md#SS_1_1_8)
-* [ユースケース-depsを用いてdepsの依存関係を調べる](deps.md#SS_1_1_9)
+* [ユースケース-循環依存を発見した場合、非0でexitする](---)
+* [ユースケース-C++のソースコードを含むディレクトリを探す](---)
+* [ユースケース-ディレクトリをパッケージとみなして、パッケージとソースコードの関係を示す](---)
+* [ユースケース-パッケージ間の依存関係を示す](---)
+* [ユースケース-パッケージ間の依存関係を構造的に表す](---)
+* [ユースケース-パッケージ間の依存関係をplant umlで表す](---)
+* [ユースケース-ソースコード間の依存関係をplant umlで表す](---)
+* [ユースケース-パッケージでないディレクトリをそれとみなさない](---)
+* [ユースケース-depsを用いてdepsの依存関係を調べる](---)
 
 におけるdepsの使い方や出力等を示す。
 
@@ -128,7 +114,7 @@ depsの仕様は入り組んでいるため、細かく機能を説明するよ�
     > ./g++/deps cyc --in p2p.txt
 ```
 
-CIのチェック項目(「[CI(継続的インテグレーション)](appendix.md#SS_2_2)」参照)に上記を導入することで、
+CIのチェック項目(「[CI(継続的インテグレーション)](---)」参照)に上記を導入することで、
 循環の無い依存関係を維持することができる。
 
 下記に、「ディレクトリが必ずしもパッケージに対応するわけではない」場合の対処法を掲載する。
@@ -454,53 +440,53 @@ deps.puをレンダリングすることで以下のイメージを得ること�
 ## ディレクトリ、ファイル構成 <a id="SS_1_2"></a>
 
 * app:main.cppを含むパッケージ
-    * [example/deps/CMakeLists.txt](sample_code.md#SS_3_2_1) **---** メインのCMakeLists.txt
-    * [example/deps/app/src/main.cpp](sample_code.md#SS_3_1_3) **---** depsのmain関数を含むファイル
-    * [example/deps/app/src/deps_opts.cpp](sample_code.md#SS_3_1_1) **---** depsのオプション処理
-    * [example/deps/app/src/deps_opts.h](sample_code.md#SS_3_1_2)
-    * [example/deps/app/ut/deps_opts_ut.cpp](sample_code.md#SS_3_1_4) **---** appパッケージの単体テスト
+    * [example/deps/CMakeLists.txt](---) **---** メインのCMakeLists.txt
+    * [example/deps/app/src/main.cpp](---) **---** depsのmain関数を含むファイル
+    * [example/deps/app/src/deps_opts.cpp](---) **---** depsのオプション処理
+    * [example/deps/app/src/deps_opts.h](---)
+    * [example/deps/app/ut/deps_opts_ut.cpp](---) **---** appパッケージの単体テスト
 
 * dependency:依存関係を導き出すアルゴリズムライブラリdependency.a用のパッケージ
-    * [example/deps/dependency/CMakeLists.txt](sample_code.md#SS_3_2_2) **---** dependencyのCMakeLists.txt
-    * [example/deps/dependency/src/arch_pkg.cpp](sample_code.md#SS_3_1_6) **---** パッケージの依存関係の導出
-    * [example/deps/dependency/src/arch_pkg.h](sample_code.md#SS_3_1_7) **---** arch_pkg.cppの非公開ヘッダ
-    * [example/deps/dependency/src/cpp_deps.cpp](sample_code.md#SS_3_1_8) **---** ファイル間依存関係の依存関係の導出
-    * [example/deps/dependency/src/cpp_deps.h](sample_code.md#SS_3_1_9) **---** cpp_deps.cppの非公開ヘッダ
-    * [example/deps/dependency/src/cpp_dir.cpp](sample_code.md#SS_3_1_10) **---** C++ファイルを含むディレクトリ抽出
-    * [example/deps/dependency/src/cpp_dir.h](sample_code.md#SS_3_1_11) **---** cpp_dir.cppの非公開ヘッダ
-    * [example/deps/dependency/src/cpp_src.cpp](sample_code.md#SS_3_1_12) **---** C++ファイルの抽出
-    * [example/deps/dependency/src/cpp_src.h](sample_code.md#SS_3_1_13) **---** cpp_src.cppの非公開ヘッダ
-    * [example/deps/dependency/h/dependency/deps_scenario.h](sample_code.md#SS_3_1_5) **---** 依存関係表示のシナリオの公開ヘッダ
-    * [example/deps/dependency/src/deps_scenario.cpp](sample_code.md#SS_3_1_14) **---** 依存関係表示のユースケースシナリオ
-    * [example/deps/dependency/src/load_store_format.cpp](sample_code.md#SS_3_1_15) **---** deps生成ファイルのロード/ストア
-    * [example/deps/dependency/src/load_store_format.h](sample_code.md#SS_3_1_16) **---** load_store_format.cppの非公開ヘッダ
-    * [example/deps/dependency/ut/arch_pkg_ut.cpp](sample_code.md#SS_3_1_17) **---** arch_pkg.cppの単体テスト
-    * [example/deps/dependency/ut/cpp_deps_ut.cpp](sample_code.md#SS_3_1_18) **---** cpp_deps.cppの単体テスト
-    * [example/deps/dependency/ut/cpp_dir_ut.cpp](sample_code.md#SS_3_1_19) **---** cpp_dir.cppの単体テスト
-    * [example/deps/dependency/ut/cpp_src_ut.cpp](sample_code.md#SS_3_1_20) **---** cpp_src.cppの単体テスト
-    * [example/deps/dependency/ut/deps_scenario_ut.cpp](sample_code.md#SS_3_1_21) **---** deps_scenario.cppの単体テスト
-    * [example/deps/dependency/ut/load_store_format_ut.cpp](sample_code.md#SS_3_1_22) **---** load_store_format.cppの単体テスト
+    * [example/deps/dependency/CMakeLists.txt](---) **---** dependencyのCMakeLists.txt
+    * [example/deps/dependency/src/arch_pkg.cpp](---) **---** パッケージの依存関係の導出
+    * [example/deps/dependency/src/arch_pkg.h](---) **---** arch_pkg.cppの非公開ヘッダ
+    * [example/deps/dependency/src/cpp_deps.cpp](---) **---** ファイル間依存関係の依存関係の導出
+    * [example/deps/dependency/src/cpp_deps.h](---) **---** cpp_deps.cppの非公開ヘッダ
+    * [example/deps/dependency/src/cpp_dir.cpp](---) **---** C++ファイルを含むディレクトリ抽出
+    * [example/deps/dependency/src/cpp_dir.h](---) **---** cpp_dir.cppの非公開ヘッダ
+    * [example/deps/dependency/src/cpp_src.cpp](---) **---** C++ファイルの抽出
+    * [example/deps/dependency/src/cpp_src.h](---) **---** cpp_src.cppの非公開ヘッダ
+    * [example/deps/dependency/h/dependency/deps_scenario.h](---) **---** 依存関係表示のシナリオの公開ヘッダ
+    * [example/deps/dependency/src/deps_scenario.cpp](---) **---** 依存関係表示のユースケースシナリオ
+    * [example/deps/dependency/src/load_store_format.cpp](---) **---** deps生成ファイルのロード/ストア
+    * [example/deps/dependency/src/load_store_format.h](---) **---** load_store_format.cppの非公開ヘッダ
+    * [example/deps/dependency/ut/arch_pkg_ut.cpp](---) **---** arch_pkg.cppの単体テスト
+    * [example/deps/dependency/ut/cpp_deps_ut.cpp](---) **---** cpp_deps.cppの単体テスト
+    * [example/deps/dependency/ut/cpp_dir_ut.cpp](---) **---** cpp_dir.cppの単体テスト
+    * [example/deps/dependency/ut/cpp_src_ut.cpp](---) **---** cpp_src.cppの単体テスト
+    * [example/deps/dependency/ut/deps_scenario_ut.cpp](---) **---** deps_scenario.cppの単体テスト
+    * [example/deps/dependency/ut/load_store_format_ut.cpp](---) **---** load_store_format.cppの単体テスト
 
 *  file_utils:file_utils.a用のディレクトリ
-    * [example/deps/file_utils/CMakeLists.txt](sample_code.md#SS_3_2_3) **---** file_utilsのCMakeLists.txt
-    * [example/deps/file_utils/h/file_utils/load_store.h](sample_code.md#SS_3_1_23) **---** ファイルのロード/ストア
-    * [example/deps/file_utils/h/file_utils/load_store_row.h](sample_code.md#SS_3_1_24) **---** load_store_row.cppのヘッダ
-    * [example/deps/file_utils/h/file_utils/path_utils.h](sample_code.md#SS_3_1_25) **---** path_utils.cppのヘッダ
-    * [example/deps/file_utils/src/load_store_row.cpp](sample_code.md#SS_3_1_26) **---** ファイルのロード/ストア
-    * [example/deps/file_utils/src/path_utils.cpp](sample_code.md#SS_3_1_27) **---** ファイル操作
-    * [example/deps/file_utils/ut/load_store_row_ut.cpp](sample_code.md#SS_3_1_28) **---** load_store_row.cppの単体テスト
-    * [example/deps/file_utils/ut/path_utils_ut.cpp](sample_code.md#SS_3_1_29) **---** path_utils.cppの単体テスト 
+    * [example/deps/file_utils/CMakeLists.txt](---) **---** file_utilsのCMakeLists.txt
+    * [example/deps/file_utils/h/file_utils/load_store.h](---) **---** ファイルのロード/ストア
+    * [example/deps/file_utils/h/file_utils/load_store_row.h](---) **---** load_store_row.cppのヘッダ
+    * [example/deps/file_utils/h/file_utils/path_utils.h](---) **---** path_utils.cppのヘッダ
+    * [example/deps/file_utils/src/load_store_row.cpp](---) **---** ファイルのロード/ストア
+    * [example/deps/file_utils/src/path_utils.cpp](---) **---** ファイル操作
+    * [example/deps/file_utils/ut/load_store_row_ut.cpp](---) **---** load_store_row.cppの単体テスト
+    * [example/deps/file_utils/ut/path_utils_ut.cpp](---) **---** path_utils.cppの単体テスト 
 
 *  lib:全域からアクセス可能なテンプレートライブラリ
-    * [example/deps/lib/CMakeLists.txt](sample_code.md#SS_3_2_4) **---** libのCMakeLists.txt
-    * [example/deps/lib/h/lib/nstd.h](sample_code.md#SS_3_1_30) **---** テンプレートライブラリ
-    * [example/deps/lib/ut/nstd_ut.cpp](sample_code.md#SS_3_1_31) **---** nstd.hの単体テスト
+    * [example/deps/lib/CMakeLists.txt](---) **---** libのCMakeLists.txt
+    * [example/deps/lib/h/lib/nstd.h](---) **---** テンプレートライブラリ
+    * [example/deps/lib/ut/nstd_ut.cpp](---) **---** nstd.hの単体テスト
 
 *  logging:logging.a用のディレクトリ
-    * [example/deps/logging/CMakeLists.txt](sample_code.md#SS_3_2_5) **---** loggingのCMakeLists.txt
-    * [example/deps/logging/h/logging/logger.h](sample_code.md#SS_3_1_32) **---** logger.cppのヘッダ
-    * [example/deps/logging/src/logger.cpp](sample_code.md#SS_3_1_33) **---** ログの取得
-    * [example/deps/logging/ut/logger_ut.cpp](sample_code.md#SS_3_1_34) **---** logger.cppの単体テスト
+    * [example/deps/logging/CMakeLists.txt](---) **---** loggingのCMakeLists.txt
+    * [example/deps/logging/h/logging/logger.h](---) **---** logger.cppのヘッダ
+    * [example/deps/logging/src/logger.cpp](---) **---** ログの取得
+    * [example/deps/logging/ut/logger_ut.cpp](---) **---** logger.cppの単体テスト
                                                              
                                                              
 下記のをファイルツリーは上記を表す。
@@ -615,7 +601,7 @@ depsの各パッケージの依存関係は、
 
 のようになっている。
 
-当然ながら、「[パッケージとその構成ファイル](appendix.md#SS_2_3)」で述べた構造と相似である。
+当然ながら、「[パッケージとその構成ファイル](---)」で述べた構造と相似である。
 
 なお、utディレクトリを各パッケージ内のサブパッケージとした場合の依存関係は、
 
@@ -690,10 +676,10 @@ depsの各パッケージの依存関係は、
 ```
 
 * #includeディレクティブでのパスに上方向のディレクトリ指定("../")を使わない
-  (「[#includeで指定するパス名](appendix.md#SS_2_4)」参照)
+  (「[#includeで指定するパス名](---)」参照)
 
 とすることで、ビルド時に循環依存を作らないことを担保することができる
-(「[アーキテクチャの設計](appendix.md#SS_2_1)」参照)。
+(「[アーキテクチャの設計](---)」参照)。
 
 CMakeやVisual Studioを含むほとんどのビルドツールでも同様のことは可能である
 (逆に言えば、このようなことができないビルドツールを使うべきではない)。

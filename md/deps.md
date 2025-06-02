@@ -1,7 +1,7 @@
 # deps
 
 一般的に、ある程度の規模のソフトウェアのソースコードは下記のようにファイルツリーとして管理され、
-ディレクトリによりソースコードは機能毎に分割されされる。
+ディレクトリによりソースコードは機能毎に分割される。
 
 ```
     deps
@@ -37,7 +37,7 @@
 
 そのための市販のツールを購入することもできるが、
 やりたいことに完全にマッチしたものがあるわけではないため、
-この章ででは、専用のツールdepsを開発する。
+この章では、専用のツールdepsを開発する。
 
 通常、このようなツールの開発にはpythonやrubyが適しているが、
 このドキュメントの目的に合わせて、depsはC++で開発し、
@@ -66,14 +66,14 @@ depsのコマンドオプションを以下に示す。
              help : show help message.
              h    : same as help(-h, --help).
 
-       opptions:
+       options:
              --in IN     : use IN to execute CMD.
              --out OUT   : CMD outputs to OUT.
              --recursive : search dir as package from DIRS or IN contents.
              -R          : same as --recursive.
              --src_as_pkg: every src is as a package.
              -s          : same as --src_as_pkg.
-             --log LOG   : loggin to LOG(if LOG is "-", using STDOUT).
+             --log LOG   : logging to LOG(if LOG is "-", using STDOUT).
              --exclude PTN : exclude dirs which matchs to PTN(JS regex).
              -e PTN      : same as --exclude.
 
@@ -418,7 +418,7 @@ depsを用いてdepsの依存関係を調べてみよう。
 ```
 
 このパッケージの定義ファイルを使用し以下のコマンドを実行することで、
-deps.puを生成しする。
+deps.puを生成する。
 
 ```
     > ./g++/deps p2p  --in p.txt --out p2p.txt .    # 最後の引数はディレクトリ(忘れがち)
@@ -471,7 +471,7 @@ deps.puをレンダリングすることで以下のイメージを得ること�
     * "[example/deps/file_utils/h/file_utils/load_store.h](---)" **---** ファイルのロード/ストア
     * "[example/deps/file_utils/h/file_utils/load_store_row.h](---)" **---** load_store_row.cppのヘッダ
     * "[example/deps/file_utils/h/file_utils/path_utils.h](---)" **---** path_utils.cppのヘッダ
-    * "[example/deps/file_utils/src/load_store_row.cpp](---)" **---** ファイルののロード/ストア
+    * "[example/deps/file_utils/src/load_store_row.cpp](---)" **---** ファイルのロード/ストア
     * "[example/deps/file_utils/src/path_utils.cpp](---)" **---** ファイル操作
     * "[example/deps/file_utils/ut/load_store_row_ut.cpp](---)" **---** load_store_row.cppの単体テスト
     * "[example/deps/file_utils/ut/path_utils_ut.cpp](---)" **---** path_utils.cppの単体テスト 
@@ -615,7 +615,7 @@ depsの各パッケージの依存関係は、
     // @@@ example/deps/Makefile #0:0 begin
 ```
 
-* #includeディレクティブでのパスにに上方向のディレクトリ指定("../")を使わない
+* #includeディレクティブでのパスに上方向のディレクトリ指定("../")を使わない
   (「[#includeで指定するパス名](---)」参照)
 
 とすることで、ビルド時に循環依存を作らないことを担保することができる

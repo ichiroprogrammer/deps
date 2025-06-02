@@ -9,7 +9,7 @@ MD_GEN:=./md_gen/export/py
 
 VPATH=./md:deep/md/
 
-MDS:=deps.md  fake.md
+MDS:=deps.md  appendix.md
 
 INDEX_OPT:=--exclude $(addsuffix :1,$(MDS) sample_code.md)
 
