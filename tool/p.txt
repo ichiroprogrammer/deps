@@ -1,0 +1,6 @@
+#dir
+../example/deps/app
+../example/deps/dependency
+../example/deps/file_utils
+../example/deps/lib
+../example/deps/logging

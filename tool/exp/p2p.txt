@@ -1,0 +1,46 @@
+#deps
+../example/deps -> ../example/deps/app : 0 
+../example/deps/app -> ../example/deps : 0 
+
+../example/deps -> ../example/deps/dependency : 0 
+../example/deps/dependency -> ../example/deps : 0 
+
+../example/deps -> ../example/deps/file_utils : 0 
+../example/deps/file_utils -> ../example/deps : 0 
+
+../example/deps -> ../example/deps/lib : 0 
+../example/deps/lib -> ../example/deps : 0 
+
+../example/deps -> ../example/deps/logging : 0 
+../example/deps/logging -> ../example/deps : 0 
+
+../example/deps/app -> ../example/deps/dependency : 1 ../example/deps/dependency/h/dependency/deps_scenario.h
+../example/deps/dependency -> ../example/deps/app : 0 
+
+../example/deps/app -> ../example/deps/file_utils : 4 ../example/deps/file_utils/h/file_utils/path_utils.h
+../example/deps/file_utils -> ../example/deps/app : 0 
+
+../example/deps/app -> ../example/deps/lib : 3 ../example/deps/lib/h/lib/nstd.h
+../example/deps/lib -> ../example/deps/app : 0 
+
+../example/deps/app -> ../example/deps/logging : 1 ../example/deps/logging/h/logging/logger.h
+../example/deps/logging -> ../example/deps/app : 0 
+
+../example/deps/dependency -> ../example/deps/file_utils : 24 ../example/deps/file_utils/h/file_utils/load_store.h ../example/deps/file_utils/h/file_utils/load_store_row.h ../example/deps/file_utils/h/file_utils/path_utils.h
+../example/deps/file_utils -> ../example/deps/dependency : 0 
+
+../example/deps/dependency -> ../example/deps/lib : 4 ../example/deps/lib/h/lib/nstd.h
+../example/deps/lib -> ../example/deps/dependency : 0 
+
+../example/deps/dependency -> ../example/deps/logging : 0 
+../example/deps/logging -> ../example/deps/dependency : 0 
+
+../example/deps/file_utils -> ../example/deps/lib : 1 ../example/deps/lib/h/lib/nstd.h
+../example/deps/lib -> ../example/deps/file_utils : 0 
+
+../example/deps/file_utils -> ../example/deps/logging : 1 ../example/deps/logging/h/logging/logger.h
+../example/deps/logging -> ../example/deps/file_utils : 0 
+
+../example/deps/lib -> ../example/deps/logging : 0 
+../example/deps/logging -> ../example/deps/lib : 3 ../example/deps/lib/h/lib/nstd.h
+

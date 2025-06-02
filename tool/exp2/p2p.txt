@@ -1,0 +1,1219 @@
+#deps
+../example/deps/app/src -> ../example/deps/app/ut : 0 
+../example/deps/app/ut -> ../example/deps/app/src : 1 ../example/deps/app/src/deps_opts.h
+
+../example/deps/app/src -> ../example/deps/dependency/h/dependency : 1 ../example/deps/dependency/h/dependency/deps_scenario.h
+../example/deps/dependency/h/dependency -> ../example/deps/app/src : 0 
+
+../example/deps/app/src -> ../example/deps/dependency/src : 0 
+../example/deps/dependency/src -> ../example/deps/app/src : 0 
+
+../example/deps/app/src -> ../example/deps/dependency/ut : 0 
+../example/deps/dependency/ut -> ../example/deps/app/src : 0 
+
+../example/deps/app/src -> ../example/deps/file_utils/h/file_utils : 3 ../example/deps/file_utils/h/file_utils/path_utils.h
+../example/deps/file_utils/h/file_utils -> ../example/deps/app/src : 0 
+
+../example/deps/app/src -> ../example/deps/file_utils/src : 0 
+../example/deps/file_utils/src -> ../example/deps/app/src : 0 
+
+../example/deps/app/src -> ../example/deps/file_utils/ut : 0 
+../example/deps/file_utils/ut -> ../example/deps/app/src : 0 
+
+../example/deps/app/src -> ../example/deps/it_data/fake/a : 0 
+../example/deps/it_data/fake/a -> ../example/deps/app/src : 0 
+
+../example/deps/app/src -> ../example/deps/it_data/fake/a/e : 0 
+../example/deps/it_data/fake/a/e -> ../example/deps/app/src : 0 
+
+../example/deps/app/src -> ../example/deps/it_data/fake/b : 0 
+../example/deps/it_data/fake/b -> ../example/deps/app/src : 0 
+
+../example/deps/app/src -> ../example/deps/it_data/fake/b/e : 0 
+../example/deps/it_data/fake/b/e -> ../example/deps/app/src : 0 
+
+../example/deps/app/src -> ../example/deps/it_data/fake/c : 0 
+../example/deps/it_data/fake/c -> ../example/deps/app/src : 0 
+
+../example/deps/app/src -> ../example/deps/it_data/fake/c/e : 0 
+../example/deps/it_data/fake/c/e -> ../example/deps/app/src : 0 
+
+../example/deps/app/src -> ../example/deps/it_data/fake/d : 0 
+../example/deps/it_data/fake/d -> ../example/deps/app/src : 0 
+
+../example/deps/app/src -> ../example/deps/it_data/fake/d/e : 0 
+../example/deps/it_data/fake/d/e -> ../example/deps/app/src : 0 
+
+../example/deps/app/src -> ../example/deps/it_data/fake/e : 0 
+../example/deps/it_data/fake/e -> ../example/deps/app/src : 0 
+
+../example/deps/app/src -> ../example/deps/it_data/fake/e/e : 0 
+../example/deps/it_data/fake/e/e -> ../example/deps/app/src : 0 
+
+../example/deps/app/src -> ../example/deps/lib/h/lib : 2 ../example/deps/lib/h/lib/nstd.h
+../example/deps/lib/h/lib -> ../example/deps/app/src : 0 
+
+../example/deps/app/src -> ../example/deps/lib/ut : 0 
+../example/deps/lib/ut -> ../example/deps/app/src : 0 
+
+../example/deps/app/src -> ../example/deps/logging/h/logging : 1 ../example/deps/logging/h/logging/logger.h
+../example/deps/logging/h/logging -> ../example/deps/app/src : 0 
+
+../example/deps/app/src -> ../example/deps/logging/src : 0 
+../example/deps/logging/src -> ../example/deps/app/src : 0 
+
+../example/deps/app/src -> ../example/deps/logging/ut : 0 
+../example/deps/logging/ut -> ../example/deps/app/src : 0 
+
+../example/deps/app/src -> ../example/deps/ut_data/app1 : 0 
+../example/deps/ut_data/app1 -> ../example/deps/app/src : 0 
+
+../example/deps/app/src -> ../example/deps/ut_data/app1/mod1 : 0 
+../example/deps/ut_data/app1/mod1 -> ../example/deps/app/src : 0 
+
+../example/deps/app/src -> ../example/deps/ut_data/app1/mod2 : 0 
+../example/deps/ut_data/app1/mod2 -> ../example/deps/app/src : 0 
+
+../example/deps/app/src -> ../example/deps/ut_data/app1/mod2/mod2_1 : 0 
+../example/deps/ut_data/app1/mod2/mod2_1 -> ../example/deps/app/src : 0 
+
+../example/deps/app/src -> ../example/deps/ut_data/app1/mod2/mod2_2 : 0 
+../example/deps/ut_data/app1/mod2/mod2_2 -> ../example/deps/app/src : 0 
+
+../example/deps/app/src -> ../example/deps/ut_data/app2 : 0 
+../example/deps/ut_data/app2 -> ../example/deps/app/src : 0 
+
+../example/deps/app/ut -> ../example/deps/dependency/h/dependency : 0 
+../example/deps/dependency/h/dependency -> ../example/deps/app/ut : 0 
+
+../example/deps/app/ut -> ../example/deps/dependency/src : 0 
+../example/deps/dependency/src -> ../example/deps/app/ut : 0 
+
+../example/deps/app/ut -> ../example/deps/dependency/ut : 0 
+../example/deps/dependency/ut -> ../example/deps/app/ut : 0 
+
+../example/deps/app/ut -> ../example/deps/file_utils/h/file_utils : 1 ../example/deps/file_utils/h/file_utils/path_utils.h
+../example/deps/file_utils/h/file_utils -> ../example/deps/app/ut : 0 
+
+../example/deps/app/ut -> ../example/deps/file_utils/src : 0 
+../example/deps/file_utils/src -> ../example/deps/app/ut : 0 
+
+../example/deps/app/ut -> ../example/deps/file_utils/ut : 0 
+../example/deps/file_utils/ut -> ../example/deps/app/ut : 0 
+
+../example/deps/app/ut -> ../example/deps/it_data/fake/a : 0 
+../example/deps/it_data/fake/a -> ../example/deps/app/ut : 0 
+
+../example/deps/app/ut -> ../example/deps/it_data/fake/a/e : 0 
+../example/deps/it_data/fake/a/e -> ../example/deps/app/ut : 0 
+
+../example/deps/app/ut -> ../example/deps/it_data/fake/b : 0 
+../example/deps/it_data/fake/b -> ../example/deps/app/ut : 0 
+
+../example/deps/app/ut -> ../example/deps/it_data/fake/b/e : 0 
+../example/deps/it_data/fake/b/e -> ../example/deps/app/ut : 0 
+
+../example/deps/app/ut -> ../example/deps/it_data/fake/c : 0 
+../example/deps/it_data/fake/c -> ../example/deps/app/ut : 0 
+
+../example/deps/app/ut -> ../example/deps/it_data/fake/c/e : 0 
+../example/deps/it_data/fake/c/e -> ../example/deps/app/ut : 0 
+
+../example/deps/app/ut -> ../example/deps/it_data/fake/d : 0 
+../example/deps/it_data/fake/d -> ../example/deps/app/ut : 0 
+
+../example/deps/app/ut -> ../example/deps/it_data/fake/d/e : 0 
+../example/deps/it_data/fake/d/e -> ../example/deps/app/ut : 0 
+
+../example/deps/app/ut -> ../example/deps/it_data/fake/e : 0 
+../example/deps/it_data/fake/e -> ../example/deps/app/ut : 0 
+
+../example/deps/app/ut -> ../example/deps/it_data/fake/e/e : 0 
+../example/deps/it_data/fake/e/e -> ../example/deps/app/ut : 0 
+
+../example/deps/app/ut -> ../example/deps/lib/h/lib : 1 ../example/deps/lib/h/lib/nstd.h
+../example/deps/lib/h/lib -> ../example/deps/app/ut : 0 
+
+../example/deps/app/ut -> ../example/deps/lib/ut : 0 
+../example/deps/lib/ut -> ../example/deps/app/ut : 0 
+
+../example/deps/app/ut -> ../example/deps/logging/h/logging : 0 
+../example/deps/logging/h/logging -> ../example/deps/app/ut : 0 
+
+../example/deps/app/ut -> ../example/deps/logging/src : 0 
+../example/deps/logging/src -> ../example/deps/app/ut : 0 
+
+../example/deps/app/ut -> ../example/deps/logging/ut : 0 
+../example/deps/logging/ut -> ../example/deps/app/ut : 0 
+
+../example/deps/app/ut -> ../example/deps/ut_data/app1 : 0 
+../example/deps/ut_data/app1 -> ../example/deps/app/ut : 0 
+
+../example/deps/app/ut -> ../example/deps/ut_data/app1/mod1 : 0 
+../example/deps/ut_data/app1/mod1 -> ../example/deps/app/ut : 0 
+
+../example/deps/app/ut -> ../example/deps/ut_data/app1/mod2 : 0 
+../example/deps/ut_data/app1/mod2 -> ../example/deps/app/ut : 0 
+
+../example/deps/app/ut -> ../example/deps/ut_data/app1/mod2/mod2_1 : 0 
+../example/deps/ut_data/app1/mod2/mod2_1 -> ../example/deps/app/ut : 0 
+
+../example/deps/app/ut -> ../example/deps/ut_data/app1/mod2/mod2_2 : 0 
+../example/deps/ut_data/app1/mod2/mod2_2 -> ../example/deps/app/ut : 0 
+
+../example/deps/app/ut -> ../example/deps/ut_data/app2 : 0 
+../example/deps/ut_data/app2 -> ../example/deps/app/ut : 0 
+
+../example/deps/dependency/h/dependency -> ../example/deps/dependency/src : 0 
+../example/deps/dependency/src -> ../example/deps/dependency/h/dependency : 1 ../example/deps/dependency/h/dependency/deps_scenario.h
+
+../example/deps/dependency/h/dependency -> ../example/deps/dependency/ut : 0 
+../example/deps/dependency/ut -> ../example/deps/dependency/h/dependency : 1 ../example/deps/dependency/h/dependency/deps_scenario.h
+
+../example/deps/dependency/h/dependency -> ../example/deps/file_utils/h/file_utils : 1 ../example/deps/file_utils/h/file_utils/path_utils.h
+../example/deps/file_utils/h/file_utils -> ../example/deps/dependency/h/dependency : 0 
+
+../example/deps/dependency/h/dependency -> ../example/deps/file_utils/src : 0 
+../example/deps/file_utils/src -> ../example/deps/dependency/h/dependency : 0 
+
+../example/deps/dependency/h/dependency -> ../example/deps/file_utils/ut : 0 
+../example/deps/file_utils/ut -> ../example/deps/dependency/h/dependency : 0 
+
+../example/deps/dependency/h/dependency -> ../example/deps/it_data/fake/a : 0 
+../example/deps/it_data/fake/a -> ../example/deps/dependency/h/dependency : 0 
+
+../example/deps/dependency/h/dependency -> ../example/deps/it_data/fake/a/e : 0 
+../example/deps/it_data/fake/a/e -> ../example/deps/dependency/h/dependency : 0 
+
+../example/deps/dependency/h/dependency -> ../example/deps/it_data/fake/b : 0 
+../example/deps/it_data/fake/b -> ../example/deps/dependency/h/dependency : 0 
+
+../example/deps/dependency/h/dependency -> ../example/deps/it_data/fake/b/e : 0 
+../example/deps/it_data/fake/b/e -> ../example/deps/dependency/h/dependency : 0 
+
+../example/deps/dependency/h/dependency -> ../example/deps/it_data/fake/c : 0 
+../example/deps/it_data/fake/c -> ../example/deps/dependency/h/dependency : 0 
+
+../example/deps/dependency/h/dependency -> ../example/deps/it_data/fake/c/e : 0 
+../example/deps/it_data/fake/c/e -> ../example/deps/dependency/h/dependency : 0 
+
+../example/deps/dependency/h/dependency -> ../example/deps/it_data/fake/d : 0 
+../example/deps/it_data/fake/d -> ../example/deps/dependency/h/dependency : 0 
+
+../example/deps/dependency/h/dependency -> ../example/deps/it_data/fake/d/e : 0 
+../example/deps/it_data/fake/d/e -> ../example/deps/dependency/h/dependency : 0 
+
+../example/deps/dependency/h/dependency -> ../example/deps/it_data/fake/e : 0 
+../example/deps/it_data/fake/e -> ../example/deps/dependency/h/dependency : 0 
+
+../example/deps/dependency/h/dependency -> ../example/deps/it_data/fake/e/e : 0 
+../example/deps/it_data/fake/e/e -> ../example/deps/dependency/h/dependency : 0 
+
+../example/deps/dependency/h/dependency -> ../example/deps/lib/h/lib : 0 
+../example/deps/lib/h/lib -> ../example/deps/dependency/h/dependency : 0 
+
+../example/deps/dependency/h/dependency -> ../example/deps/lib/ut : 0 
+../example/deps/lib/ut -> ../example/deps/dependency/h/dependency : 0 
+
+../example/deps/dependency/h/dependency -> ../example/deps/logging/h/logging : 0 
+../example/deps/logging/h/logging -> ../example/deps/dependency/h/dependency : 0 
+
+../example/deps/dependency/h/dependency -> ../example/deps/logging/src : 0 
+../example/deps/logging/src -> ../example/deps/dependency/h/dependency : 0 
+
+../example/deps/dependency/h/dependency -> ../example/deps/logging/ut : 0 
+../example/deps/logging/ut -> ../example/deps/dependency/h/dependency : 0 
+
+../example/deps/dependency/h/dependency -> ../example/deps/ut_data/app1 : 0 
+../example/deps/ut_data/app1 -> ../example/deps/dependency/h/dependency : 0 
+
+../example/deps/dependency/h/dependency -> ../example/deps/ut_data/app1/mod1 : 0 
+../example/deps/ut_data/app1/mod1 -> ../example/deps/dependency/h/dependency : 0 
+
+../example/deps/dependency/h/dependency -> ../example/deps/ut_data/app1/mod2 : 0 
+../example/deps/ut_data/app1/mod2 -> ../example/deps/dependency/h/dependency : 0 
+
+../example/deps/dependency/h/dependency -> ../example/deps/ut_data/app1/mod2/mod2_1 : 0 
+../example/deps/ut_data/app1/mod2/mod2_1 -> ../example/deps/dependency/h/dependency : 0 
+
+../example/deps/dependency/h/dependency -> ../example/deps/ut_data/app1/mod2/mod2_2 : 0 
+../example/deps/ut_data/app1/mod2/mod2_2 -> ../example/deps/dependency/h/dependency : 0 
+
+../example/deps/dependency/h/dependency -> ../example/deps/ut_data/app2 : 0 
+../example/deps/ut_data/app2 -> ../example/deps/dependency/h/dependency : 0 
+
+../example/deps/dependency/src -> ../example/deps/dependency/ut : 0 
+../example/deps/dependency/ut -> ../example/deps/dependency/src : 15 ../example/deps/dependency/src/arch_pkg.h ../example/deps/dependency/src/cpp_deps.h ../example/deps/dependency/src/cpp_dir.h ../example/deps/dependency/src/cpp_src.h ../example/deps/dependency/src/load_store_format.h
+
+../example/deps/dependency/src -> ../example/deps/file_utils/h/file_utils : 13 ../example/deps/file_utils/h/file_utils/load_store.h ../example/deps/file_utils/h/file_utils/path_utils.h
+../example/deps/file_utils/h/file_utils -> ../example/deps/dependency/src : 0 
+
+../example/deps/dependency/src -> ../example/deps/file_utils/src : 0 
+../example/deps/file_utils/src -> ../example/deps/dependency/src : 0 
+
+../example/deps/dependency/src -> ../example/deps/file_utils/ut : 0 
+../example/deps/file_utils/ut -> ../example/deps/dependency/src : 0 
+
+../example/deps/dependency/src -> ../example/deps/it_data/fake/a : 0 
+../example/deps/it_data/fake/a -> ../example/deps/dependency/src : 0 
+
+../example/deps/dependency/src -> ../example/deps/it_data/fake/a/e : 0 
+../example/deps/it_data/fake/a/e -> ../example/deps/dependency/src : 0 
+
+../example/deps/dependency/src -> ../example/deps/it_data/fake/b : 0 
+../example/deps/it_data/fake/b -> ../example/deps/dependency/src : 0 
+
+../example/deps/dependency/src -> ../example/deps/it_data/fake/b/e : 0 
+../example/deps/it_data/fake/b/e -> ../example/deps/dependency/src : 0 
+
+../example/deps/dependency/src -> ../example/deps/it_data/fake/c : 0 
+../example/deps/it_data/fake/c -> ../example/deps/dependency/src : 0 
+
+../example/deps/dependency/src -> ../example/deps/it_data/fake/c/e : 0 
+../example/deps/it_data/fake/c/e -> ../example/deps/dependency/src : 0 
+
+../example/deps/dependency/src -> ../example/deps/it_data/fake/d : 0 
+../example/deps/it_data/fake/d -> ../example/deps/dependency/src : 0 
+
+../example/deps/dependency/src -> ../example/deps/it_data/fake/d/e : 0 
+../example/deps/it_data/fake/d/e -> ../example/deps/dependency/src : 0 
+
+../example/deps/dependency/src -> ../example/deps/it_data/fake/e : 0 
+../example/deps/it_data/fake/e -> ../example/deps/dependency/src : 0 
+
+../example/deps/dependency/src -> ../example/deps/it_data/fake/e/e : 0 
+../example/deps/it_data/fake/e/e -> ../example/deps/dependency/src : 0 
+
+../example/deps/dependency/src -> ../example/deps/lib/h/lib : 4 ../example/deps/lib/h/lib/nstd.h
+../example/deps/lib/h/lib -> ../example/deps/dependency/src : 0 
+
+../example/deps/dependency/src -> ../example/deps/lib/ut : 0 
+../example/deps/lib/ut -> ../example/deps/dependency/src : 0 
+
+../example/deps/dependency/src -> ../example/deps/logging/h/logging : 0 
+../example/deps/logging/h/logging -> ../example/deps/dependency/src : 0 
+
+../example/deps/dependency/src -> ../example/deps/logging/src : 0 
+../example/deps/logging/src -> ../example/deps/dependency/src : 0 
+
+../example/deps/dependency/src -> ../example/deps/logging/ut : 0 
+../example/deps/logging/ut -> ../example/deps/dependency/src : 0 
+
+../example/deps/dependency/src -> ../example/deps/ut_data/app1 : 0 
+../example/deps/ut_data/app1 -> ../example/deps/dependency/src : 0 
+
+../example/deps/dependency/src -> ../example/deps/ut_data/app1/mod1 : 0 
+../example/deps/ut_data/app1/mod1 -> ../example/deps/dependency/src : 0 
+
+../example/deps/dependency/src -> ../example/deps/ut_data/app1/mod2 : 0 
+../example/deps/ut_data/app1/mod2 -> ../example/deps/dependency/src : 0 
+
+../example/deps/dependency/src -> ../example/deps/ut_data/app1/mod2/mod2_1 : 0 
+../example/deps/ut_data/app1/mod2/mod2_1 -> ../example/deps/dependency/src : 0 
+
+../example/deps/dependency/src -> ../example/deps/ut_data/app1/mod2/mod2_2 : 0 
+../example/deps/ut_data/app1/mod2/mod2_2 -> ../example/deps/dependency/src : 0 
+
+../example/deps/dependency/src -> ../example/deps/ut_data/app2 : 0 
+../example/deps/ut_data/app2 -> ../example/deps/dependency/src : 0 
+
+../example/deps/dependency/ut -> ../example/deps/file_utils/h/file_utils : 10 ../example/deps/file_utils/h/file_utils/load_store.h ../example/deps/file_utils/h/file_utils/load_store_row.h ../example/deps/file_utils/h/file_utils/path_utils.h
+../example/deps/file_utils/h/file_utils -> ../example/deps/dependency/ut : 0 
+
+../example/deps/dependency/ut -> ../example/deps/file_utils/src : 0 
+../example/deps/file_utils/src -> ../example/deps/dependency/ut : 0 
+
+../example/deps/dependency/ut -> ../example/deps/file_utils/ut : 0 
+../example/deps/file_utils/ut -> ../example/deps/dependency/ut : 0 
+
+../example/deps/dependency/ut -> ../example/deps/it_data/fake/a : 0 
+../example/deps/it_data/fake/a -> ../example/deps/dependency/ut : 0 
+
+../example/deps/dependency/ut -> ../example/deps/it_data/fake/a/e : 0 
+../example/deps/it_data/fake/a/e -> ../example/deps/dependency/ut : 0 
+
+../example/deps/dependency/ut -> ../example/deps/it_data/fake/b : 0 
+../example/deps/it_data/fake/b -> ../example/deps/dependency/ut : 0 
+
+../example/deps/dependency/ut -> ../example/deps/it_data/fake/b/e : 0 
+../example/deps/it_data/fake/b/e -> ../example/deps/dependency/ut : 0 
+
+../example/deps/dependency/ut -> ../example/deps/it_data/fake/c : 0 
+../example/deps/it_data/fake/c -> ../example/deps/dependency/ut : 0 
+
+../example/deps/dependency/ut -> ../example/deps/it_data/fake/c/e : 0 
+../example/deps/it_data/fake/c/e -> ../example/deps/dependency/ut : 0 
+
+../example/deps/dependency/ut -> ../example/deps/it_data/fake/d : 0 
+../example/deps/it_data/fake/d -> ../example/deps/dependency/ut : 0 
+
+../example/deps/dependency/ut -> ../example/deps/it_data/fake/d/e : 0 
+../example/deps/it_data/fake/d/e -> ../example/deps/dependency/ut : 0 
+
+../example/deps/dependency/ut -> ../example/deps/it_data/fake/e : 0 
+../example/deps/it_data/fake/e -> ../example/deps/dependency/ut : 0 
+
+../example/deps/dependency/ut -> ../example/deps/it_data/fake/e/e : 0 
+../example/deps/it_data/fake/e/e -> ../example/deps/dependency/ut : 0 
+
+../example/deps/dependency/ut -> ../example/deps/lib/h/lib : 0 
+../example/deps/lib/h/lib -> ../example/deps/dependency/ut : 0 
+
+../example/deps/dependency/ut -> ../example/deps/lib/ut : 0 
+../example/deps/lib/ut -> ../example/deps/dependency/ut : 0 
+
+../example/deps/dependency/ut -> ../example/deps/logging/h/logging : 0 
+../example/deps/logging/h/logging -> ../example/deps/dependency/ut : 0 
+
+../example/deps/dependency/ut -> ../example/deps/logging/src : 0 
+../example/deps/logging/src -> ../example/deps/dependency/ut : 0 
+
+../example/deps/dependency/ut -> ../example/deps/logging/ut : 0 
+../example/deps/logging/ut -> ../example/deps/dependency/ut : 0 
+
+../example/deps/dependency/ut -> ../example/deps/ut_data/app1 : 0 
+../example/deps/ut_data/app1 -> ../example/deps/dependency/ut : 0 
+
+../example/deps/dependency/ut -> ../example/deps/ut_data/app1/mod1 : 0 
+../example/deps/ut_data/app1/mod1 -> ../example/deps/dependency/ut : 0 
+
+../example/deps/dependency/ut -> ../example/deps/ut_data/app1/mod2 : 0 
+../example/deps/ut_data/app1/mod2 -> ../example/deps/dependency/ut : 0 
+
+../example/deps/dependency/ut -> ../example/deps/ut_data/app1/mod2/mod2_1 : 0 
+../example/deps/ut_data/app1/mod2/mod2_1 -> ../example/deps/dependency/ut : 0 
+
+../example/deps/dependency/ut -> ../example/deps/ut_data/app1/mod2/mod2_2 : 0 
+../example/deps/ut_data/app1/mod2/mod2_2 -> ../example/deps/dependency/ut : 0 
+
+../example/deps/dependency/ut -> ../example/deps/ut_data/app2 : 0 
+../example/deps/ut_data/app2 -> ../example/deps/dependency/ut : 0 
+
+../example/deps/file_utils/h/file_utils -> ../example/deps/file_utils/src : 0 
+../example/deps/file_utils/src -> ../example/deps/file_utils/h/file_utils : 3 ../example/deps/file_utils/h/file_utils/load_store.h ../example/deps/file_utils/h/file_utils/load_store_row.h ../example/deps/file_utils/h/file_utils/path_utils.h
+
+../example/deps/file_utils/h/file_utils -> ../example/deps/file_utils/ut : 0 
+../example/deps/file_utils/ut -> ../example/deps/file_utils/h/file_utils : 6 ../example/deps/file_utils/h/file_utils/load_store.h ../example/deps/file_utils/h/file_utils/load_store_row.h ../example/deps/file_utils/h/file_utils/path_utils.h
+
+../example/deps/file_utils/h/file_utils -> ../example/deps/it_data/fake/a : 0 
+../example/deps/it_data/fake/a -> ../example/deps/file_utils/h/file_utils : 0 
+
+../example/deps/file_utils/h/file_utils -> ../example/deps/it_data/fake/a/e : 0 
+../example/deps/it_data/fake/a/e -> ../example/deps/file_utils/h/file_utils : 0 
+
+../example/deps/file_utils/h/file_utils -> ../example/deps/it_data/fake/b : 0 
+../example/deps/it_data/fake/b -> ../example/deps/file_utils/h/file_utils : 0 
+
+../example/deps/file_utils/h/file_utils -> ../example/deps/it_data/fake/b/e : 0 
+../example/deps/it_data/fake/b/e -> ../example/deps/file_utils/h/file_utils : 0 
+
+../example/deps/file_utils/h/file_utils -> ../example/deps/it_data/fake/c : 0 
+../example/deps/it_data/fake/c -> ../example/deps/file_utils/h/file_utils : 0 
+
+../example/deps/file_utils/h/file_utils -> ../example/deps/it_data/fake/c/e : 0 
+../example/deps/it_data/fake/c/e -> ../example/deps/file_utils/h/file_utils : 0 
+
+../example/deps/file_utils/h/file_utils -> ../example/deps/it_data/fake/d : 0 
+../example/deps/it_data/fake/d -> ../example/deps/file_utils/h/file_utils : 0 
+
+../example/deps/file_utils/h/file_utils -> ../example/deps/it_data/fake/d/e : 0 
+../example/deps/it_data/fake/d/e -> ../example/deps/file_utils/h/file_utils : 0 
+
+../example/deps/file_utils/h/file_utils -> ../example/deps/it_data/fake/e : 0 
+../example/deps/it_data/fake/e -> ../example/deps/file_utils/h/file_utils : 0 
+
+../example/deps/file_utils/h/file_utils -> ../example/deps/it_data/fake/e/e : 0 
+../example/deps/it_data/fake/e/e -> ../example/deps/file_utils/h/file_utils : 0 
+
+../example/deps/file_utils/h/file_utils -> ../example/deps/lib/h/lib : 0 
+../example/deps/lib/h/lib -> ../example/deps/file_utils/h/file_utils : 0 
+
+../example/deps/file_utils/h/file_utils -> ../example/deps/lib/ut : 0 
+../example/deps/lib/ut -> ../example/deps/file_utils/h/file_utils : 0 
+
+../example/deps/file_utils/h/file_utils -> ../example/deps/logging/h/logging : 0 
+../example/deps/logging/h/logging -> ../example/deps/file_utils/h/file_utils : 0 
+
+../example/deps/file_utils/h/file_utils -> ../example/deps/logging/src : 0 
+../example/deps/logging/src -> ../example/deps/file_utils/h/file_utils : 0 
+
+../example/deps/file_utils/h/file_utils -> ../example/deps/logging/ut : 0 
+../example/deps/logging/ut -> ../example/deps/file_utils/h/file_utils : 0 
+
+../example/deps/file_utils/h/file_utils -> ../example/deps/ut_data/app1 : 0 
+../example/deps/ut_data/app1 -> ../example/deps/file_utils/h/file_utils : 0 
+
+../example/deps/file_utils/h/file_utils -> ../example/deps/ut_data/app1/mod1 : 0 
+../example/deps/ut_data/app1/mod1 -> ../example/deps/file_utils/h/file_utils : 0 
+
+../example/deps/file_utils/h/file_utils -> ../example/deps/ut_data/app1/mod2 : 0 
+../example/deps/ut_data/app1/mod2 -> ../example/deps/file_utils/h/file_utils : 0 
+
+../example/deps/file_utils/h/file_utils -> ../example/deps/ut_data/app1/mod2/mod2_1 : 0 
+../example/deps/ut_data/app1/mod2/mod2_1 -> ../example/deps/file_utils/h/file_utils : 0 
+
+../example/deps/file_utils/h/file_utils -> ../example/deps/ut_data/app1/mod2/mod2_2 : 0 
+../example/deps/ut_data/app1/mod2/mod2_2 -> ../example/deps/file_utils/h/file_utils : 0 
+
+../example/deps/file_utils/h/file_utils -> ../example/deps/ut_data/app2 : 0 
+../example/deps/ut_data/app2 -> ../example/deps/file_utils/h/file_utils : 0 
+
+../example/deps/file_utils/src -> ../example/deps/file_utils/ut : 0 
+../example/deps/file_utils/ut -> ../example/deps/file_utils/src : 0 
+
+../example/deps/file_utils/src -> ../example/deps/it_data/fake/a : 0 
+../example/deps/it_data/fake/a -> ../example/deps/file_utils/src : 0 
+
+../example/deps/file_utils/src -> ../example/deps/it_data/fake/a/e : 0 
+../example/deps/it_data/fake/a/e -> ../example/deps/file_utils/src : 0 
+
+../example/deps/file_utils/src -> ../example/deps/it_data/fake/b : 0 
+../example/deps/it_data/fake/b -> ../example/deps/file_utils/src : 0 
+
+../example/deps/file_utils/src -> ../example/deps/it_data/fake/b/e : 0 
+../example/deps/it_data/fake/b/e -> ../example/deps/file_utils/src : 0 
+
+../example/deps/file_utils/src -> ../example/deps/it_data/fake/c : 0 
+../example/deps/it_data/fake/c -> ../example/deps/file_utils/src : 0 
+
+../example/deps/file_utils/src -> ../example/deps/it_data/fake/c/e : 0 
+../example/deps/it_data/fake/c/e -> ../example/deps/file_utils/src : 0 
+
+../example/deps/file_utils/src -> ../example/deps/it_data/fake/d : 0 
+../example/deps/it_data/fake/d -> ../example/deps/file_utils/src : 0 
+
+../example/deps/file_utils/src -> ../example/deps/it_data/fake/d/e : 0 
+../example/deps/it_data/fake/d/e -> ../example/deps/file_utils/src : 0 
+
+../example/deps/file_utils/src -> ../example/deps/it_data/fake/e : 0 
+../example/deps/it_data/fake/e -> ../example/deps/file_utils/src : 0 
+
+../example/deps/file_utils/src -> ../example/deps/it_data/fake/e/e : 0 
+../example/deps/it_data/fake/e/e -> ../example/deps/file_utils/src : 0 
+
+../example/deps/file_utils/src -> ../example/deps/lib/h/lib : 0 
+../example/deps/lib/h/lib -> ../example/deps/file_utils/src : 0 
+
+../example/deps/file_utils/src -> ../example/deps/lib/ut : 0 
+../example/deps/lib/ut -> ../example/deps/file_utils/src : 0 
+
+../example/deps/file_utils/src -> ../example/deps/logging/h/logging : 0 
+../example/deps/logging/h/logging -> ../example/deps/file_utils/src : 0 
+
+../example/deps/file_utils/src -> ../example/deps/logging/src : 0 
+../example/deps/logging/src -> ../example/deps/file_utils/src : 0 
+
+../example/deps/file_utils/src -> ../example/deps/logging/ut : 0 
+../example/deps/logging/ut -> ../example/deps/file_utils/src : 0 
+
+../example/deps/file_utils/src -> ../example/deps/ut_data/app1 : 0 
+../example/deps/ut_data/app1 -> ../example/deps/file_utils/src : 0 
+
+../example/deps/file_utils/src -> ../example/deps/ut_data/app1/mod1 : 0 
+../example/deps/ut_data/app1/mod1 -> ../example/deps/file_utils/src : 0 
+
+../example/deps/file_utils/src -> ../example/deps/ut_data/app1/mod2 : 0 
+../example/deps/ut_data/app1/mod2 -> ../example/deps/file_utils/src : 0 
+
+../example/deps/file_utils/src -> ../example/deps/ut_data/app1/mod2/mod2_1 : 0 
+../example/deps/ut_data/app1/mod2/mod2_1 -> ../example/deps/file_utils/src : 0 
+
+../example/deps/file_utils/src -> ../example/deps/ut_data/app1/mod2/mod2_2 : 0 
+../example/deps/ut_data/app1/mod2/mod2_2 -> ../example/deps/file_utils/src : 0 
+
+../example/deps/file_utils/src -> ../example/deps/ut_data/app2 : 0 
+../example/deps/ut_data/app2 -> ../example/deps/file_utils/src : 0 
+
+../example/deps/file_utils/ut -> ../example/deps/it_data/fake/a : 0 
+../example/deps/it_data/fake/a -> ../example/deps/file_utils/ut : 0 
+
+../example/deps/file_utils/ut -> ../example/deps/it_data/fake/a/e : 0 
+../example/deps/it_data/fake/a/e -> ../example/deps/file_utils/ut : 0 
+
+../example/deps/file_utils/ut -> ../example/deps/it_data/fake/b : 0 
+../example/deps/it_data/fake/b -> ../example/deps/file_utils/ut : 0 
+
+../example/deps/file_utils/ut -> ../example/deps/it_data/fake/b/e : 0 
+../example/deps/it_data/fake/b/e -> ../example/deps/file_utils/ut : 0 
+
+../example/deps/file_utils/ut -> ../example/deps/it_data/fake/c : 0 
+../example/deps/it_data/fake/c -> ../example/deps/file_utils/ut : 0 
+
+../example/deps/file_utils/ut -> ../example/deps/it_data/fake/c/e : 0 
+../example/deps/it_data/fake/c/e -> ../example/deps/file_utils/ut : 0 
+
+../example/deps/file_utils/ut -> ../example/deps/it_data/fake/d : 0 
+../example/deps/it_data/fake/d -> ../example/deps/file_utils/ut : 0 
+
+../example/deps/file_utils/ut -> ../example/deps/it_data/fake/d/e : 0 
+../example/deps/it_data/fake/d/e -> ../example/deps/file_utils/ut : 0 
+
+../example/deps/file_utils/ut -> ../example/deps/it_data/fake/e : 0 
+../example/deps/it_data/fake/e -> ../example/deps/file_utils/ut : 0 
+
+../example/deps/file_utils/ut -> ../example/deps/it_data/fake/e/e : 0 
+../example/deps/it_data/fake/e/e -> ../example/deps/file_utils/ut : 0 
+
+../example/deps/file_utils/ut -> ../example/deps/lib/h/lib : 1 ../example/deps/lib/h/lib/nstd.h
+../example/deps/lib/h/lib -> ../example/deps/file_utils/ut : 0 
+
+../example/deps/file_utils/ut -> ../example/deps/lib/ut : 0 
+../example/deps/lib/ut -> ../example/deps/file_utils/ut : 0 
+
+../example/deps/file_utils/ut -> ../example/deps/logging/h/logging : 1 ../example/deps/logging/h/logging/logger.h
+../example/deps/logging/h/logging -> ../example/deps/file_utils/ut : 0 
+
+../example/deps/file_utils/ut -> ../example/deps/logging/src : 0 
+../example/deps/logging/src -> ../example/deps/file_utils/ut : 0 
+
+../example/deps/file_utils/ut -> ../example/deps/logging/ut : 0 
+../example/deps/logging/ut -> ../example/deps/file_utils/ut : 0 
+
+../example/deps/file_utils/ut -> ../example/deps/ut_data/app1 : 0 
+../example/deps/ut_data/app1 -> ../example/deps/file_utils/ut : 0 
+
+../example/deps/file_utils/ut -> ../example/deps/ut_data/app1/mod1 : 0 
+../example/deps/ut_data/app1/mod1 -> ../example/deps/file_utils/ut : 0 
+
+../example/deps/file_utils/ut -> ../example/deps/ut_data/app1/mod2 : 0 
+../example/deps/ut_data/app1/mod2 -> ../example/deps/file_utils/ut : 0 
+
+../example/deps/file_utils/ut -> ../example/deps/ut_data/app1/mod2/mod2_1 : 0 
+../example/deps/ut_data/app1/mod2/mod2_1 -> ../example/deps/file_utils/ut : 0 
+
+../example/deps/file_utils/ut -> ../example/deps/ut_data/app1/mod2/mod2_2 : 0 
+../example/deps/ut_data/app1/mod2/mod2_2 -> ../example/deps/file_utils/ut : 0 
+
+../example/deps/file_utils/ut -> ../example/deps/ut_data/app2 : 0 
+../example/deps/ut_data/app2 -> ../example/deps/file_utils/ut : 0 
+
+../example/deps/it_data/fake/a -> ../example/deps/it_data/fake/a/e : 0 
+../example/deps/it_data/fake/a/e -> ../example/deps/it_data/fake/a : 0 
+
+../example/deps/it_data/fake/a -> ../example/deps/it_data/fake/b : 0 
+../example/deps/it_data/fake/b -> ../example/deps/it_data/fake/a : 0 
+
+../example/deps/it_data/fake/a -> ../example/deps/it_data/fake/b/e : 1 ../example/deps/it_data/fake/b/e/b.h
+../example/deps/it_data/fake/b/e -> ../example/deps/it_data/fake/a : 0 
+
+../example/deps/it_data/fake/a -> ../example/deps/it_data/fake/c : 0 
+../example/deps/it_data/fake/c -> ../example/deps/it_data/fake/a : 0 
+
+../example/deps/it_data/fake/a -> ../example/deps/it_data/fake/c/e : 0 
+../example/deps/it_data/fake/c/e -> ../example/deps/it_data/fake/a : 0 
+
+../example/deps/it_data/fake/a -> ../example/deps/it_data/fake/d : 0 
+../example/deps/it_data/fake/d -> ../example/deps/it_data/fake/a : 0 
+
+../example/deps/it_data/fake/a -> ../example/deps/it_data/fake/d/e : 1 ../example/deps/it_data/fake/d/e/d.hpp
+../example/deps/it_data/fake/d/e -> ../example/deps/it_data/fake/a : 0 
+
+../example/deps/it_data/fake/a -> ../example/deps/it_data/fake/e : 0 
+../example/deps/it_data/fake/e -> ../example/deps/it_data/fake/a : 0 
+
+../example/deps/it_data/fake/a -> ../example/deps/it_data/fake/e/e : 0 
+../example/deps/it_data/fake/e/e -> ../example/deps/it_data/fake/a : 0 
+
+../example/deps/it_data/fake/a -> ../example/deps/lib/h/lib : 0 
+../example/deps/lib/h/lib -> ../example/deps/it_data/fake/a : 0 
+
+../example/deps/it_data/fake/a -> ../example/deps/lib/ut : 0 
+../example/deps/lib/ut -> ../example/deps/it_data/fake/a : 0 
+
+../example/deps/it_data/fake/a -> ../example/deps/logging/h/logging : 0 
+../example/deps/logging/h/logging -> ../example/deps/it_data/fake/a : 0 
+
+../example/deps/it_data/fake/a -> ../example/deps/logging/src : 0 
+../example/deps/logging/src -> ../example/deps/it_data/fake/a : 0 
+
+../example/deps/it_data/fake/a -> ../example/deps/logging/ut : 0 
+../example/deps/logging/ut -> ../example/deps/it_data/fake/a : 0 
+
+../example/deps/it_data/fake/a -> ../example/deps/ut_data/app1 : 0 
+../example/deps/ut_data/app1 -> ../example/deps/it_data/fake/a : 0 
+
+../example/deps/it_data/fake/a -> ../example/deps/ut_data/app1/mod1 : 0 
+../example/deps/ut_data/app1/mod1 -> ../example/deps/it_data/fake/a : 0 
+
+../example/deps/it_data/fake/a -> ../example/deps/ut_data/app1/mod2 : 0 
+../example/deps/ut_data/app1/mod2 -> ../example/deps/it_data/fake/a : 0 
+
+../example/deps/it_data/fake/a -> ../example/deps/ut_data/app1/mod2/mod2_1 : 0 
+../example/deps/ut_data/app1/mod2/mod2_1 -> ../example/deps/it_data/fake/a : 0 
+
+../example/deps/it_data/fake/a -> ../example/deps/ut_data/app1/mod2/mod2_2 : 0 
+../example/deps/ut_data/app1/mod2/mod2_2 -> ../example/deps/it_data/fake/a : 0 
+
+../example/deps/it_data/fake/a -> ../example/deps/ut_data/app2 : 0 
+../example/deps/ut_data/app2 -> ../example/deps/it_data/fake/a : 0 
+
+../example/deps/it_data/fake/a/e -> ../example/deps/it_data/fake/b : 0 
+../example/deps/it_data/fake/b -> ../example/deps/it_data/fake/a/e : 0 
+
+../example/deps/it_data/fake/a/e -> ../example/deps/it_data/fake/b/e : 0 
+../example/deps/it_data/fake/b/e -> ../example/deps/it_data/fake/a/e : 0 
+
+../example/deps/it_data/fake/a/e -> ../example/deps/it_data/fake/c : 0 
+../example/deps/it_data/fake/c -> ../example/deps/it_data/fake/a/e : 1 ../example/deps/it_data/fake/a/e/a.h
+
+../example/deps/it_data/fake/a/e -> ../example/deps/it_data/fake/c/e : 0 
+../example/deps/it_data/fake/c/e -> ../example/deps/it_data/fake/a/e : 0 
+
+../example/deps/it_data/fake/a/e -> ../example/deps/it_data/fake/d : 0 
+../example/deps/it_data/fake/d -> ../example/deps/it_data/fake/a/e : 0 
+
+../example/deps/it_data/fake/a/e -> ../example/deps/it_data/fake/d/e : 0 
+../example/deps/it_data/fake/d/e -> ../example/deps/it_data/fake/a/e : 0 
+
+../example/deps/it_data/fake/a/e -> ../example/deps/it_data/fake/e : 0 
+../example/deps/it_data/fake/e -> ../example/deps/it_data/fake/a/e : 0 
+
+../example/deps/it_data/fake/a/e -> ../example/deps/it_data/fake/e/e : 0 
+../example/deps/it_data/fake/e/e -> ../example/deps/it_data/fake/a/e : 0 
+
+../example/deps/it_data/fake/a/e -> ../example/deps/lib/h/lib : 0 
+../example/deps/lib/h/lib -> ../example/deps/it_data/fake/a/e : 0 
+
+../example/deps/it_data/fake/a/e -> ../example/deps/lib/ut : 0 
+../example/deps/lib/ut -> ../example/deps/it_data/fake/a/e : 0 
+
+../example/deps/it_data/fake/a/e -> ../example/deps/logging/h/logging : 0 
+../example/deps/logging/h/logging -> ../example/deps/it_data/fake/a/e : 0 
+
+../example/deps/it_data/fake/a/e -> ../example/deps/logging/src : 0 
+../example/deps/logging/src -> ../example/deps/it_data/fake/a/e : 0 
+
+../example/deps/it_data/fake/a/e -> ../example/deps/logging/ut : 0 
+../example/deps/logging/ut -> ../example/deps/it_data/fake/a/e : 0 
+
+../example/deps/it_data/fake/a/e -> ../example/deps/ut_data/app1 : 0 
+../example/deps/ut_data/app1 -> ../example/deps/it_data/fake/a/e : 0 
+
+../example/deps/it_data/fake/a/e -> ../example/deps/ut_data/app1/mod1 : 0 
+../example/deps/ut_data/app1/mod1 -> ../example/deps/it_data/fake/a/e : 0 
+
+../example/deps/it_data/fake/a/e -> ../example/deps/ut_data/app1/mod2 : 0 
+../example/deps/ut_data/app1/mod2 -> ../example/deps/it_data/fake/a/e : 0 
+
+../example/deps/it_data/fake/a/e -> ../example/deps/ut_data/app1/mod2/mod2_1 : 0 
+../example/deps/ut_data/app1/mod2/mod2_1 -> ../example/deps/it_data/fake/a/e : 0 
+
+../example/deps/it_data/fake/a/e -> ../example/deps/ut_data/app1/mod2/mod2_2 : 0 
+../example/deps/ut_data/app1/mod2/mod2_2 -> ../example/deps/it_data/fake/a/e : 0 
+
+../example/deps/it_data/fake/a/e -> ../example/deps/ut_data/app2 : 0 
+../example/deps/ut_data/app2 -> ../example/deps/it_data/fake/a/e : 0 
+
+../example/deps/it_data/fake/b -> ../example/deps/it_data/fake/b/e : 0 
+../example/deps/it_data/fake/b/e -> ../example/deps/it_data/fake/b : 0 
+
+../example/deps/it_data/fake/b -> ../example/deps/it_data/fake/c : 0 
+../example/deps/it_data/fake/c -> ../example/deps/it_data/fake/b : 0 
+
+../example/deps/it_data/fake/b -> ../example/deps/it_data/fake/c/e : 1 ../example/deps/it_data/fake/c/e/c.h
+../example/deps/it_data/fake/c/e -> ../example/deps/it_data/fake/b : 0 
+
+../example/deps/it_data/fake/b -> ../example/deps/it_data/fake/d : 0 
+../example/deps/it_data/fake/d -> ../example/deps/it_data/fake/b : 0 
+
+../example/deps/it_data/fake/b -> ../example/deps/it_data/fake/d/e : 0 
+../example/deps/it_data/fake/d/e -> ../example/deps/it_data/fake/b : 0 
+
+../example/deps/it_data/fake/b -> ../example/deps/it_data/fake/e : 0 
+../example/deps/it_data/fake/e -> ../example/deps/it_data/fake/b : 0 
+
+../example/deps/it_data/fake/b -> ../example/deps/it_data/fake/e/e : 0 
+../example/deps/it_data/fake/e/e -> ../example/deps/it_data/fake/b : 0 
+
+../example/deps/it_data/fake/b -> ../example/deps/lib/h/lib : 0 
+../example/deps/lib/h/lib -> ../example/deps/it_data/fake/b : 0 
+
+../example/deps/it_data/fake/b -> ../example/deps/lib/ut : 0 
+../example/deps/lib/ut -> ../example/deps/it_data/fake/b : 0 
+
+../example/deps/it_data/fake/b -> ../example/deps/logging/h/logging : 0 
+../example/deps/logging/h/logging -> ../example/deps/it_data/fake/b : 0 
+
+../example/deps/it_data/fake/b -> ../example/deps/logging/src : 0 
+../example/deps/logging/src -> ../example/deps/it_data/fake/b : 0 
+
+../example/deps/it_data/fake/b -> ../example/deps/logging/ut : 0 
+../example/deps/logging/ut -> ../example/deps/it_data/fake/b : 0 
+
+../example/deps/it_data/fake/b -> ../example/deps/ut_data/app1 : 0 
+../example/deps/ut_data/app1 -> ../example/deps/it_data/fake/b : 0 
+
+../example/deps/it_data/fake/b -> ../example/deps/ut_data/app1/mod1 : 0 
+../example/deps/ut_data/app1/mod1 -> ../example/deps/it_data/fake/b : 0 
+
+../example/deps/it_data/fake/b -> ../example/deps/ut_data/app1/mod2 : 0 
+../example/deps/ut_data/app1/mod2 -> ../example/deps/it_data/fake/b : 0 
+
+../example/deps/it_data/fake/b -> ../example/deps/ut_data/app1/mod2/mod2_1 : 0 
+../example/deps/ut_data/app1/mod2/mod2_1 -> ../example/deps/it_data/fake/b : 0 
+
+../example/deps/it_data/fake/b -> ../example/deps/ut_data/app1/mod2/mod2_2 : 0 
+../example/deps/ut_data/app1/mod2/mod2_2 -> ../example/deps/it_data/fake/b : 0 
+
+../example/deps/it_data/fake/b -> ../example/deps/ut_data/app2 : 0 
+../example/deps/ut_data/app2 -> ../example/deps/it_data/fake/b : 0 
+
+../example/deps/it_data/fake/b/e -> ../example/deps/it_data/fake/c : 0 
+../example/deps/it_data/fake/c -> ../example/deps/it_data/fake/b/e : 0 
+
+../example/deps/it_data/fake/b/e -> ../example/deps/it_data/fake/c/e : 0 
+../example/deps/it_data/fake/c/e -> ../example/deps/it_data/fake/b/e : 0 
+
+../example/deps/it_data/fake/b/e -> ../example/deps/it_data/fake/d : 0 
+../example/deps/it_data/fake/d -> ../example/deps/it_data/fake/b/e : 0 
+
+../example/deps/it_data/fake/b/e -> ../example/deps/it_data/fake/d/e : 0 
+../example/deps/it_data/fake/d/e -> ../example/deps/it_data/fake/b/e : 0 
+
+../example/deps/it_data/fake/b/e -> ../example/deps/it_data/fake/e : 0 
+../example/deps/it_data/fake/e -> ../example/deps/it_data/fake/b/e : 0 
+
+../example/deps/it_data/fake/b/e -> ../example/deps/it_data/fake/e/e : 0 
+../example/deps/it_data/fake/e/e -> ../example/deps/it_data/fake/b/e : 0 
+
+../example/deps/it_data/fake/b/e -> ../example/deps/lib/h/lib : 0 
+../example/deps/lib/h/lib -> ../example/deps/it_data/fake/b/e : 0 
+
+../example/deps/it_data/fake/b/e -> ../example/deps/lib/ut : 0 
+../example/deps/lib/ut -> ../example/deps/it_data/fake/b/e : 0 
+
+../example/deps/it_data/fake/b/e -> ../example/deps/logging/h/logging : 0 
+../example/deps/logging/h/logging -> ../example/deps/it_data/fake/b/e : 0 
+
+../example/deps/it_data/fake/b/e -> ../example/deps/logging/src : 0 
+../example/deps/logging/src -> ../example/deps/it_data/fake/b/e : 0 
+
+../example/deps/it_data/fake/b/e -> ../example/deps/logging/ut : 0 
+../example/deps/logging/ut -> ../example/deps/it_data/fake/b/e : 0 
+
+../example/deps/it_data/fake/b/e -> ../example/deps/ut_data/app1 : 0 
+../example/deps/ut_data/app1 -> ../example/deps/it_data/fake/b/e : 0 
+
+../example/deps/it_data/fake/b/e -> ../example/deps/ut_data/app1/mod1 : 0 
+../example/deps/ut_data/app1/mod1 -> ../example/deps/it_data/fake/b/e : 0 
+
+../example/deps/it_data/fake/b/e -> ../example/deps/ut_data/app1/mod2 : 0 
+../example/deps/ut_data/app1/mod2 -> ../example/deps/it_data/fake/b/e : 0 
+
+../example/deps/it_data/fake/b/e -> ../example/deps/ut_data/app1/mod2/mod2_1 : 0 
+../example/deps/ut_data/app1/mod2/mod2_1 -> ../example/deps/it_data/fake/b/e : 0 
+
+../example/deps/it_data/fake/b/e -> ../example/deps/ut_data/app1/mod2/mod2_2 : 0 
+../example/deps/ut_data/app1/mod2/mod2_2 -> ../example/deps/it_data/fake/b/e : 0 
+
+../example/deps/it_data/fake/b/e -> ../example/deps/ut_data/app2 : 0 
+../example/deps/ut_data/app2 -> ../example/deps/it_data/fake/b/e : 0 
+
+../example/deps/it_data/fake/c -> ../example/deps/it_data/fake/c/e : 1 ../example/deps/it_data/fake/c/e/c.h
+../example/deps/it_data/fake/c/e -> ../example/deps/it_data/fake/c : 0 
+
+../example/deps/it_data/fake/c -> ../example/deps/it_data/fake/d : 0 
+../example/deps/it_data/fake/d -> ../example/deps/it_data/fake/c : 0 
+
+../example/deps/it_data/fake/c -> ../example/deps/it_data/fake/d/e : 0 
+../example/deps/it_data/fake/d/e -> ../example/deps/it_data/fake/c : 0 
+
+../example/deps/it_data/fake/c -> ../example/deps/it_data/fake/e : 0 
+../example/deps/it_data/fake/e -> ../example/deps/it_data/fake/c : 0 
+
+../example/deps/it_data/fake/c -> ../example/deps/it_data/fake/e/e : 0 
+../example/deps/it_data/fake/e/e -> ../example/deps/it_data/fake/c : 0 
+
+../example/deps/it_data/fake/c -> ../example/deps/lib/h/lib : 0 
+../example/deps/lib/h/lib -> ../example/deps/it_data/fake/c : 0 
+
+../example/deps/it_data/fake/c -> ../example/deps/lib/ut : 0 
+../example/deps/lib/ut -> ../example/deps/it_data/fake/c : 0 
+
+../example/deps/it_data/fake/c -> ../example/deps/logging/h/logging : 0 
+../example/deps/logging/h/logging -> ../example/deps/it_data/fake/c : 0 
+
+../example/deps/it_data/fake/c -> ../example/deps/logging/src : 0 
+../example/deps/logging/src -> ../example/deps/it_data/fake/c : 0 
+
+../example/deps/it_data/fake/c -> ../example/deps/logging/ut : 0 
+../example/deps/logging/ut -> ../example/deps/it_data/fake/c : 0 
+
+../example/deps/it_data/fake/c -> ../example/deps/ut_data/app1 : 0 
+../example/deps/ut_data/app1 -> ../example/deps/it_data/fake/c : 0 
+
+../example/deps/it_data/fake/c -> ../example/deps/ut_data/app1/mod1 : 0 
+../example/deps/ut_data/app1/mod1 -> ../example/deps/it_data/fake/c : 0 
+
+../example/deps/it_data/fake/c -> ../example/deps/ut_data/app1/mod2 : 0 
+../example/deps/ut_data/app1/mod2 -> ../example/deps/it_data/fake/c : 0 
+
+../example/deps/it_data/fake/c -> ../example/deps/ut_data/app1/mod2/mod2_1 : 0 
+../example/deps/ut_data/app1/mod2/mod2_1 -> ../example/deps/it_data/fake/c : 0 
+
+../example/deps/it_data/fake/c -> ../example/deps/ut_data/app1/mod2/mod2_2 : 0 
+../example/deps/ut_data/app1/mod2/mod2_2 -> ../example/deps/it_data/fake/c : 0 
+
+../example/deps/it_data/fake/c -> ../example/deps/ut_data/app2 : 0 
+../example/deps/ut_data/app2 -> ../example/deps/it_data/fake/c : 0 
+
+../example/deps/it_data/fake/c/e -> ../example/deps/it_data/fake/d : 0 
+../example/deps/it_data/fake/d -> ../example/deps/it_data/fake/c/e : 0 
+
+../example/deps/it_data/fake/c/e -> ../example/deps/it_data/fake/d/e : 0 
+../example/deps/it_data/fake/d/e -> ../example/deps/it_data/fake/c/e : 0 
+
+../example/deps/it_data/fake/c/e -> ../example/deps/it_data/fake/e : 0 
+../example/deps/it_data/fake/e -> ../example/deps/it_data/fake/c/e : 0 
+
+../example/deps/it_data/fake/c/e -> ../example/deps/it_data/fake/e/e : 0 
+../example/deps/it_data/fake/e/e -> ../example/deps/it_data/fake/c/e : 0 
+
+../example/deps/it_data/fake/c/e -> ../example/deps/lib/h/lib : 0 
+../example/deps/lib/h/lib -> ../example/deps/it_data/fake/c/e : 0 
+
+../example/deps/it_data/fake/c/e -> ../example/deps/lib/ut : 0 
+../example/deps/lib/ut -> ../example/deps/it_data/fake/c/e : 0 
+
+../example/deps/it_data/fake/c/e -> ../example/deps/logging/h/logging : 0 
+../example/deps/logging/h/logging -> ../example/deps/it_data/fake/c/e : 0 
+
+../example/deps/it_data/fake/c/e -> ../example/deps/logging/src : 0 
+../example/deps/logging/src -> ../example/deps/it_data/fake/c/e : 0 
+
+../example/deps/it_data/fake/c/e -> ../example/deps/logging/ut : 0 
+../example/deps/logging/ut -> ../example/deps/it_data/fake/c/e : 0 
+
+../example/deps/it_data/fake/c/e -> ../example/deps/ut_data/app1 : 0 
+../example/deps/ut_data/app1 -> ../example/deps/it_data/fake/c/e : 0 
+
+../example/deps/it_data/fake/c/e -> ../example/deps/ut_data/app1/mod1 : 0 
+../example/deps/ut_data/app1/mod1 -> ../example/deps/it_data/fake/c/e : 0 
+
+../example/deps/it_data/fake/c/e -> ../example/deps/ut_data/app1/mod2 : 0 
+../example/deps/ut_data/app1/mod2 -> ../example/deps/it_data/fake/c/e : 0 
+
+../example/deps/it_data/fake/c/e -> ../example/deps/ut_data/app1/mod2/mod2_1 : 0 
+../example/deps/ut_data/app1/mod2/mod2_1 -> ../example/deps/it_data/fake/c/e : 0 
+
+../example/deps/it_data/fake/c/e -> ../example/deps/ut_data/app1/mod2/mod2_2 : 0 
+../example/deps/ut_data/app1/mod2/mod2_2 -> ../example/deps/it_data/fake/c/e : 0 
+
+../example/deps/it_data/fake/c/e -> ../example/deps/ut_data/app2 : 0 
+../example/deps/ut_data/app2 -> ../example/deps/it_data/fake/c/e : 0 
+
+../example/deps/it_data/fake/d -> ../example/deps/it_data/fake/d/e : 0 
+../example/deps/it_data/fake/d/e -> ../example/deps/it_data/fake/d : 0 
+
+../example/deps/it_data/fake/d -> ../example/deps/it_data/fake/e : 0 
+../example/deps/it_data/fake/e -> ../example/deps/it_data/fake/d : 0 
+
+../example/deps/it_data/fake/d -> ../example/deps/it_data/fake/e/e : 1 ../example/deps/it_data/fake/e/e/e.h
+../example/deps/it_data/fake/e/e -> ../example/deps/it_data/fake/d : 0 
+
+../example/deps/it_data/fake/d -> ../example/deps/lib/h/lib : 0 
+../example/deps/lib/h/lib -> ../example/deps/it_data/fake/d : 0 
+
+../example/deps/it_data/fake/d -> ../example/deps/lib/ut : 0 
+../example/deps/lib/ut -> ../example/deps/it_data/fake/d : 0 
+
+../example/deps/it_data/fake/d -> ../example/deps/logging/h/logging : 0 
+../example/deps/logging/h/logging -> ../example/deps/it_data/fake/d : 0 
+
+../example/deps/it_data/fake/d -> ../example/deps/logging/src : 0 
+../example/deps/logging/src -> ../example/deps/it_data/fake/d : 0 
+
+../example/deps/it_data/fake/d -> ../example/deps/logging/ut : 0 
+../example/deps/logging/ut -> ../example/deps/it_data/fake/d : 0 
+
+../example/deps/it_data/fake/d -> ../example/deps/ut_data/app1 : 0 
+../example/deps/ut_data/app1 -> ../example/deps/it_data/fake/d : 0 
+
+../example/deps/it_data/fake/d -> ../example/deps/ut_data/app1/mod1 : 0 
+../example/deps/ut_data/app1/mod1 -> ../example/deps/it_data/fake/d : 0 
+
+../example/deps/it_data/fake/d -> ../example/deps/ut_data/app1/mod2 : 0 
+../example/deps/ut_data/app1/mod2 -> ../example/deps/it_data/fake/d : 0 
+
+../example/deps/it_data/fake/d -> ../example/deps/ut_data/app1/mod2/mod2_1 : 0 
+../example/deps/ut_data/app1/mod2/mod2_1 -> ../example/deps/it_data/fake/d : 0 
+
+../example/deps/it_data/fake/d -> ../example/deps/ut_data/app1/mod2/mod2_2 : 0 
+../example/deps/ut_data/app1/mod2/mod2_2 -> ../example/deps/it_data/fake/d : 0 
+
+../example/deps/it_data/fake/d -> ../example/deps/ut_data/app2 : 0 
+../example/deps/ut_data/app2 -> ../example/deps/it_data/fake/d : 0 
+
+../example/deps/it_data/fake/d/e -> ../example/deps/it_data/fake/e : 0 
+../example/deps/it_data/fake/e -> ../example/deps/it_data/fake/d/e : 1 ../example/deps/it_data/fake/d/e/d.hpp
+
+../example/deps/it_data/fake/d/e -> ../example/deps/it_data/fake/e/e : 0 
+../example/deps/it_data/fake/e/e -> ../example/deps/it_data/fake/d/e : 0 
+
+../example/deps/it_data/fake/d/e -> ../example/deps/lib/h/lib : 0 
+../example/deps/lib/h/lib -> ../example/deps/it_data/fake/d/e : 0 
+
+../example/deps/it_data/fake/d/e -> ../example/deps/lib/ut : 0 
+../example/deps/lib/ut -> ../example/deps/it_data/fake/d/e : 0 
+
+../example/deps/it_data/fake/d/e -> ../example/deps/logging/h/logging : 0 
+../example/deps/logging/h/logging -> ../example/deps/it_data/fake/d/e : 0 
+
+../example/deps/it_data/fake/d/e -> ../example/deps/logging/src : 0 
+../example/deps/logging/src -> ../example/deps/it_data/fake/d/e : 0 
+
+../example/deps/it_data/fake/d/e -> ../example/deps/logging/ut : 0 
+../example/deps/logging/ut -> ../example/deps/it_data/fake/d/e : 0 
+
+../example/deps/it_data/fake/d/e -> ../example/deps/ut_data/app1 : 0 
+../example/deps/ut_data/app1 -> ../example/deps/it_data/fake/d/e : 0 
+
+../example/deps/it_data/fake/d/e -> ../example/deps/ut_data/app1/mod1 : 0 
+../example/deps/ut_data/app1/mod1 -> ../example/deps/it_data/fake/d/e : 0 
+
+../example/deps/it_data/fake/d/e -> ../example/deps/ut_data/app1/mod2 : 0 
+../example/deps/ut_data/app1/mod2 -> ../example/deps/it_data/fake/d/e : 0 
+
+../example/deps/it_data/fake/d/e -> ../example/deps/ut_data/app1/mod2/mod2_1 : 0 
+../example/deps/ut_data/app1/mod2/mod2_1 -> ../example/deps/it_data/fake/d/e : 0 
+
+../example/deps/it_data/fake/d/e -> ../example/deps/ut_data/app1/mod2/mod2_2 : 0 
+../example/deps/ut_data/app1/mod2/mod2_2 -> ../example/deps/it_data/fake/d/e : 0 
+
+../example/deps/it_data/fake/d/e -> ../example/deps/ut_data/app2 : 0 
+../example/deps/ut_data/app2 -> ../example/deps/it_data/fake/d/e : 0 
+
+../example/deps/it_data/fake/e -> ../example/deps/it_data/fake/e/e : 0 
+../example/deps/it_data/fake/e/e -> ../example/deps/it_data/fake/e : 0 
+
+../example/deps/it_data/fake/e -> ../example/deps/lib/h/lib : 0 
+../example/deps/lib/h/lib -> ../example/deps/it_data/fake/e : 0 
+
+../example/deps/it_data/fake/e -> ../example/deps/lib/ut : 0 
+../example/deps/lib/ut -> ../example/deps/it_data/fake/e : 0 
+
+../example/deps/it_data/fake/e -> ../example/deps/logging/h/logging : 0 
+../example/deps/logging/h/logging -> ../example/deps/it_data/fake/e : 0 
+
+../example/deps/it_data/fake/e -> ../example/deps/logging/src : 0 
+../example/deps/logging/src -> ../example/deps/it_data/fake/e : 0 
+
+../example/deps/it_data/fake/e -> ../example/deps/logging/ut : 0 
+../example/deps/logging/ut -> ../example/deps/it_data/fake/e : 0 
+
+../example/deps/it_data/fake/e -> ../example/deps/ut_data/app1 : 0 
+../example/deps/ut_data/app1 -> ../example/deps/it_data/fake/e : 0 
+
+../example/deps/it_data/fake/e -> ../example/deps/ut_data/app1/mod1 : 0 
+../example/deps/ut_data/app1/mod1 -> ../example/deps/it_data/fake/e : 0 
+
+../example/deps/it_data/fake/e -> ../example/deps/ut_data/app1/mod2 : 0 
+../example/deps/ut_data/app1/mod2 -> ../example/deps/it_data/fake/e : 0 
+
+../example/deps/it_data/fake/e -> ../example/deps/ut_data/app1/mod2/mod2_1 : 0 
+../example/deps/ut_data/app1/mod2/mod2_1 -> ../example/deps/it_data/fake/e : 0 
+
+../example/deps/it_data/fake/e -> ../example/deps/ut_data/app1/mod2/mod2_2 : 0 
+../example/deps/ut_data/app1/mod2/mod2_2 -> ../example/deps/it_data/fake/e : 0 
+
+../example/deps/it_data/fake/e -> ../example/deps/ut_data/app2 : 0 
+../example/deps/ut_data/app2 -> ../example/deps/it_data/fake/e : 0 
+
+../example/deps/it_data/fake/e/e -> ../example/deps/lib/h/lib : 0 
+../example/deps/lib/h/lib -> ../example/deps/it_data/fake/e/e : 0 
+
+../example/deps/it_data/fake/e/e -> ../example/deps/lib/ut : 0 
+../example/deps/lib/ut -> ../example/deps/it_data/fake/e/e : 0 
+
+../example/deps/it_data/fake/e/e -> ../example/deps/logging/h/logging : 0 
+../example/deps/logging/h/logging -> ../example/deps/it_data/fake/e/e : 0 
+
+../example/deps/it_data/fake/e/e -> ../example/deps/logging/src : 0 
+../example/deps/logging/src -> ../example/deps/it_data/fake/e/e : 0 
+
+../example/deps/it_data/fake/e/e -> ../example/deps/logging/ut : 0 
+../example/deps/logging/ut -> ../example/deps/it_data/fake/e/e : 0 
+
+../example/deps/it_data/fake/e/e -> ../example/deps/ut_data/app1 : 0 
+../example/deps/ut_data/app1 -> ../example/deps/it_data/fake/e/e : 0 
+
+../example/deps/it_data/fake/e/e -> ../example/deps/ut_data/app1/mod1 : 0 
+../example/deps/ut_data/app1/mod1 -> ../example/deps/it_data/fake/e/e : 0 
+
+../example/deps/it_data/fake/e/e -> ../example/deps/ut_data/app1/mod2 : 0 
+../example/deps/ut_data/app1/mod2 -> ../example/deps/it_data/fake/e/e : 0 
+
+../example/deps/it_data/fake/e/e -> ../example/deps/ut_data/app1/mod2/mod2_1 : 0 
+../example/deps/ut_data/app1/mod2/mod2_1 -> ../example/deps/it_data/fake/e/e : 0 
+
+../example/deps/it_data/fake/e/e -> ../example/deps/ut_data/app1/mod2/mod2_2 : 0 
+../example/deps/ut_data/app1/mod2/mod2_2 -> ../example/deps/it_data/fake/e/e : 0 
+
+../example/deps/it_data/fake/e/e -> ../example/deps/ut_data/app2 : 0 
+../example/deps/ut_data/app2 -> ../example/deps/it_data/fake/e/e : 0 
+
+../example/deps/lib/h/lib -> ../example/deps/lib/ut : 0 
+../example/deps/lib/ut -> ../example/deps/lib/h/lib : 1 ../example/deps/lib/h/lib/nstd.h
+
+../example/deps/lib/h/lib -> ../example/deps/logging/h/logging : 0 
+../example/deps/logging/h/logging -> ../example/deps/lib/h/lib : 1 ../example/deps/lib/h/lib/nstd.h
+
+../example/deps/lib/h/lib -> ../example/deps/logging/src : 0 
+../example/deps/logging/src -> ../example/deps/lib/h/lib : 1 ../example/deps/lib/h/lib/nstd.h
+
+../example/deps/lib/h/lib -> ../example/deps/logging/ut : 0 
+../example/deps/logging/ut -> ../example/deps/lib/h/lib : 1 ../example/deps/lib/h/lib/nstd.h
+
+../example/deps/lib/h/lib -> ../example/deps/ut_data/app1 : 0 
+../example/deps/ut_data/app1 -> ../example/deps/lib/h/lib : 0 
+
+../example/deps/lib/h/lib -> ../example/deps/ut_data/app1/mod1 : 0 
+../example/deps/ut_data/app1/mod1 -> ../example/deps/lib/h/lib : 0 
+
+../example/deps/lib/h/lib -> ../example/deps/ut_data/app1/mod2 : 0 
+../example/deps/ut_data/app1/mod2 -> ../example/deps/lib/h/lib : 0 
+
+../example/deps/lib/h/lib -> ../example/deps/ut_data/app1/mod2/mod2_1 : 0 
+../example/deps/ut_data/app1/mod2/mod2_1 -> ../example/deps/lib/h/lib : 0 
+
+../example/deps/lib/h/lib -> ../example/deps/ut_data/app1/mod2/mod2_2 : 0 
+../example/deps/ut_data/app1/mod2/mod2_2 -> ../example/deps/lib/h/lib : 0 
+
+../example/deps/lib/h/lib -> ../example/deps/ut_data/app2 : 0 
+../example/deps/ut_data/app2 -> ../example/deps/lib/h/lib : 0 
+
+../example/deps/lib/ut -> ../example/deps/logging/h/logging : 0 
+../example/deps/logging/h/logging -> ../example/deps/lib/ut : 0 
+
+../example/deps/lib/ut -> ../example/deps/logging/src : 0 
+../example/deps/logging/src -> ../example/deps/lib/ut : 0 
+
+../example/deps/lib/ut -> ../example/deps/logging/ut : 0 
+../example/deps/logging/ut -> ../example/deps/lib/ut : 0 
+
+../example/deps/lib/ut -> ../example/deps/ut_data/app1 : 0 
+../example/deps/ut_data/app1 -> ../example/deps/lib/ut : 0 
+
+../example/deps/lib/ut -> ../example/deps/ut_data/app1/mod1 : 0 
+../example/deps/ut_data/app1/mod1 -> ../example/deps/lib/ut : 0 
+
+../example/deps/lib/ut -> ../example/deps/ut_data/app1/mod2 : 0 
+../example/deps/ut_data/app1/mod2 -> ../example/deps/lib/ut : 0 
+
+../example/deps/lib/ut -> ../example/deps/ut_data/app1/mod2/mod2_1 : 0 
+../example/deps/ut_data/app1/mod2/mod2_1 -> ../example/deps/lib/ut : 0 
+
+../example/deps/lib/ut -> ../example/deps/ut_data/app1/mod2/mod2_2 : 0 
+../example/deps/ut_data/app1/mod2/mod2_2 -> ../example/deps/lib/ut : 0 
+
+../example/deps/lib/ut -> ../example/deps/ut_data/app2 : 0 
+../example/deps/ut_data/app2 -> ../example/deps/lib/ut : 0 
+
+../example/deps/logging/h/logging -> ../example/deps/logging/src : 0 
+../example/deps/logging/src -> ../example/deps/logging/h/logging : 1 ../example/deps/logging/h/logging/logger.h
+
+../example/deps/logging/h/logging -> ../example/deps/logging/ut : 0 
+../example/deps/logging/ut -> ../example/deps/logging/h/logging : 1 ../example/deps/logging/h/logging/logger.h
+
+../example/deps/logging/h/logging -> ../example/deps/ut_data/app1 : 0 
+../example/deps/ut_data/app1 -> ../example/deps/logging/h/logging : 0 
+
+../example/deps/logging/h/logging -> ../example/deps/ut_data/app1/mod1 : 0 
+../example/deps/ut_data/app1/mod1 -> ../example/deps/logging/h/logging : 0 
+
+../example/deps/logging/h/logging -> ../example/deps/ut_data/app1/mod2 : 0 
+../example/deps/ut_data/app1/mod2 -> ../example/deps/logging/h/logging : 0 
+
+../example/deps/logging/h/logging -> ../example/deps/ut_data/app1/mod2/mod2_1 : 0 
+../example/deps/ut_data/app1/mod2/mod2_1 -> ../example/deps/logging/h/logging : 0 
+
+../example/deps/logging/h/logging -> ../example/deps/ut_data/app1/mod2/mod2_2 : 0 
+../example/deps/ut_data/app1/mod2/mod2_2 -> ../example/deps/logging/h/logging : 0 
+
+../example/deps/logging/h/logging -> ../example/deps/ut_data/app2 : 0 
+../example/deps/ut_data/app2 -> ../example/deps/logging/h/logging : 0 
+
+../example/deps/logging/src -> ../example/deps/logging/ut : 0 
+../example/deps/logging/ut -> ../example/deps/logging/src : 0 
+
+../example/deps/logging/src -> ../example/deps/ut_data/app1 : 0 
+../example/deps/ut_data/app1 -> ../example/deps/logging/src : 0 
+
+../example/deps/logging/src -> ../example/deps/ut_data/app1/mod1 : 0 
+../example/deps/ut_data/app1/mod1 -> ../example/deps/logging/src : 0 
+
+../example/deps/logging/src -> ../example/deps/ut_data/app1/mod2 : 0 
+../example/deps/ut_data/app1/mod2 -> ../example/deps/logging/src : 0 
+
+../example/deps/logging/src -> ../example/deps/ut_data/app1/mod2/mod2_1 : 0 
+../example/deps/ut_data/app1/mod2/mod2_1 -> ../example/deps/logging/src : 0 
+
+../example/deps/logging/src -> ../example/deps/ut_data/app1/mod2/mod2_2 : 0 
+../example/deps/ut_data/app1/mod2/mod2_2 -> ../example/deps/logging/src : 0 
+
+../example/deps/logging/src -> ../example/deps/ut_data/app2 : 0 
+../example/deps/ut_data/app2 -> ../example/deps/logging/src : 0 
+
+../example/deps/logging/ut -> ../example/deps/ut_data/app1 : 0 
+../example/deps/ut_data/app1 -> ../example/deps/logging/ut : 0 
+
+../example/deps/logging/ut -> ../example/deps/ut_data/app1/mod1 : 0 
+../example/deps/ut_data/app1/mod1 -> ../example/deps/logging/ut : 0 
+
+../example/deps/logging/ut -> ../example/deps/ut_data/app1/mod2 : 0 
+../example/deps/ut_data/app1/mod2 -> ../example/deps/logging/ut : 0 
+
+../example/deps/logging/ut -> ../example/deps/ut_data/app1/mod2/mod2_1 : 0 
+../example/deps/ut_data/app1/mod2/mod2_1 -> ../example/deps/logging/ut : 0 
+
+../example/deps/logging/ut -> ../example/deps/ut_data/app1/mod2/mod2_2 : 0 
+../example/deps/ut_data/app1/mod2/mod2_2 -> ../example/deps/logging/ut : 0 
+
+../example/deps/logging/ut -> ../example/deps/ut_data/app2 : 0 
+../example/deps/ut_data/app2 -> ../example/deps/logging/ut : 0 
+
+../example/deps/ut_data/app1 -> ../example/deps/ut_data/app1/mod1 : 6 ../example/deps/ut_data/app1/mod1/mod1_1.hpp ../example/deps/ut_data/app1/mod1/mod1_2.hpp
+../example/deps/ut_data/app1/mod1 -> ../example/deps/ut_data/app1 : 1 ../example/deps/ut_data/app1/a_1_cpp.h
+
+../example/deps/ut_data/app1 -> ../example/deps/ut_data/app1/mod2 : 0 
+../example/deps/ut_data/app1/mod2 -> ../example/deps/ut_data/app1 : 0 
+
+../example/deps/ut_data/app1 -> ../example/deps/ut_data/app1/mod2/mod2_1 : 3 ../example/deps/ut_data/app1/mod2/mod2_1/mod2_1_1.h
+../example/deps/ut_data/app1/mod2/mod2_1 -> ../example/deps/ut_data/app1 : 1 ../example/deps/ut_data/app1/a_1_cpp.h
+
+../example/deps/ut_data/app1 -> ../example/deps/ut_data/app1/mod2/mod2_2 : 3 ../example/deps/ut_data/app1/mod2/mod2_2/mod2_2_1.h
+../example/deps/ut_data/app1/mod2/mod2_2 -> ../example/deps/ut_data/app1 : 2 ../example/deps/ut_data/app1/a_1_cpp.h
+
+../example/deps/ut_data/app1 -> ../example/deps/ut_data/app2 : 0 
+../example/deps/ut_data/app2 -> ../example/deps/ut_data/app1 : 3 ../example/deps/ut_data/app1/a_1_cpp.h ../example/deps/ut_data/app1/a_2_cpp.hpp
+
+../example/deps/ut_data/app1/mod1 -> ../example/deps/ut_data/app1/mod2 : 1 ../example/deps/ut_data/app1/mod2/mod2_1.hpp
+../example/deps/ut_data/app1/mod2 -> ../example/deps/ut_data/app1/mod1 : 0 
+
+../example/deps/ut_data/app1/mod1 -> ../example/deps/ut_data/app1/mod2/mod2_1 : 1 ../example/deps/ut_data/app1/mod2/mod2_1/mod2_1_1.h
+../example/deps/ut_data/app1/mod2/mod2_1 -> ../example/deps/ut_data/app1/mod1 : 2 ../example/deps/ut_data/app1/mod1/mod1_1.hpp ../example/deps/ut_data/app1/mod1/mod1_2.hpp
+
+../example/deps/ut_data/app1/mod1 -> ../example/deps/ut_data/app1/mod2/mod2_2 : 1 ../example/deps/ut_data/app1/mod2/mod2_2/mod2_2_1.h
+../example/deps/ut_data/app1/mod2/mod2_2 -> ../example/deps/ut_data/app1/mod1 : 4 ../example/deps/ut_data/app1/mod1/mod1_1.hpp ../example/deps/ut_data/app1/mod1/mod1_2.hpp
+
+../example/deps/ut_data/app1/mod1 -> ../example/deps/ut_data/app2 : 0 
+../example/deps/ut_data/app2 -> ../example/deps/ut_data/app1/mod1 : 4 ../example/deps/ut_data/app1/mod1/mod1_1.hpp ../example/deps/ut_data/app1/mod1/mod1_2.hpp
+
+../example/deps/ut_data/app1/mod2 -> ../example/deps/ut_data/app1/mod2/mod2_1 : 0 
+../example/deps/ut_data/app1/mod2/mod2_1 -> ../example/deps/ut_data/app1/mod2 : 0 
+
+../example/deps/ut_data/app1/mod2 -> ../example/deps/ut_data/app1/mod2/mod2_2 : 0 
+../example/deps/ut_data/app1/mod2/mod2_2 -> ../example/deps/ut_data/app1/mod2 : 0 
+
+../example/deps/ut_data/app1/mod2 -> ../example/deps/ut_data/app2 : 0 
+../example/deps/ut_data/app2 -> ../example/deps/ut_data/app1/mod2 : 0 
+
+../example/deps/ut_data/app1/mod2/mod2_1 -> ../example/deps/ut_data/app1/mod2/mod2_2 : 1 ../example/deps/ut_data/app1/mod2/mod2_2/mod2_2_1.h
+../example/deps/ut_data/app1/mod2/mod2_2 -> ../example/deps/ut_data/app1/mod2/mod2_1 : 2 ../example/deps/ut_data/app1/mod2/mod2_1/mod2_1_1.h
+
+../example/deps/ut_data/app1/mod2/mod2_1 -> ../example/deps/ut_data/app2 : 0 
+../example/deps/ut_data/app2 -> ../example/deps/ut_data/app1/mod2/mod2_1 : 2 ../example/deps/ut_data/app1/mod2/mod2_1/mod2_1_1.h
+
+../example/deps/ut_data/app1/mod2/mod2_2 -> ../example/deps/ut_data/app2 : 0 
+../example/deps/ut_data/app2 -> ../example/deps/ut_data/app1/mod2/mod2_2 : 2 ../example/deps/ut_data/app1/mod2/mod2_2/mod2_2_1.h
+

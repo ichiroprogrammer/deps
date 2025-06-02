@@ -1,0 +1,83 @@
+@startuml
+scale max 730 width
+rectangle "src" as ..___example___deps___app___src
+rectangle "ut" as ..___example___deps___app___ut
+rectangle "dependency" as ..___example___deps___dependency___h___dependency
+rectangle "src" as ..___example___deps___dependency___src
+rectangle "ut" as ..___example___deps___dependency___ut
+rectangle "file_utils" as ..___example___deps___file_utils___h___file_utils
+rectangle "src" as ..___example___deps___file_utils___src
+rectangle "ut" as ..___example___deps___file_utils___ut
+rectangle "a" as ..___example___deps___it_data___fake___a {
+    rectangle "e" as ..___example___deps___it_data___fake___a___e
+}
+rectangle "b" as ..___example___deps___it_data___fake___b {
+    rectangle "e" as ..___example___deps___it_data___fake___b___e
+}
+rectangle "c" as ..___example___deps___it_data___fake___c {
+    rectangle "e" as ..___example___deps___it_data___fake___c___e
+}
+rectangle "d" as ..___example___deps___it_data___fake___d {
+    rectangle "e" as ..___example___deps___it_data___fake___d___e
+}
+rectangle "e" as ..___example___deps___it_data___fake___e {
+    rectangle "e" as ..___example___deps___it_data___fake___e___e
+}
+rectangle "lib" as ..___example___deps___lib___h___lib
+rectangle "ut" as ..___example___deps___lib___ut
+rectangle "logging" as ..___example___deps___logging___h___logging
+rectangle "src" as ..___example___deps___logging___src
+rectangle "ut" as ..___example___deps___logging___ut
+rectangle "app1" as ..___example___deps___ut_data___app1 {
+    rectangle "mod1" as ..___example___deps___ut_data___app1___mod1
+    rectangle "mod2" as ..___example___deps___ut_data___app1___mod2 {
+        rectangle "mod2_1" as ..___example___deps___ut_data___app1___mod2___mod2_1
+        rectangle "mod2_2" as ..___example___deps___ut_data___app1___mod2___mod2_2
+    }
+}
+rectangle "app2" as ..___example___deps___ut_data___app2
+
+..___example___deps___app___ut "1" -[#green]-> ..___example___deps___app___src
+..___example___deps___app___src "1" -[#green]-> ..___example___deps___dependency___h___dependency
+..___example___deps___app___src "3" -[#green]-> ..___example___deps___file_utils___h___file_utils
+..___example___deps___app___src "2" -[#green]-> ..___example___deps___lib___h___lib
+..___example___deps___app___src "1" -[#green]-> ..___example___deps___logging___h___logging
+..___example___deps___app___ut "1" -[#green]-> ..___example___deps___file_utils___h___file_utils
+..___example___deps___app___ut "1" -[#green]-> ..___example___deps___lib___h___lib
+..___example___deps___dependency___src "1" -[#green]-> ..___example___deps___dependency___h___dependency
+..___example___deps___dependency___ut "1" -[#green]-> ..___example___deps___dependency___h___dependency
+..___example___deps___dependency___h___dependency "1" -[#green]-> ..___example___deps___file_utils___h___file_utils
+..___example___deps___dependency___ut "15" -[#green]-> ..___example___deps___dependency___src
+..___example___deps___dependency___src "13" -[#green]-> ..___example___deps___file_utils___h___file_utils
+..___example___deps___dependency___src "4" -[#green]-> ..___example___deps___lib___h___lib
+..___example___deps___dependency___ut "10" -[#green]-> ..___example___deps___file_utils___h___file_utils
+..___example___deps___file_utils___src "3" -[#green]-> ..___example___deps___file_utils___h___file_utils
+..___example___deps___file_utils___ut "6" -[#green]-> ..___example___deps___file_utils___h___file_utils
+..___example___deps___file_utils___ut "1" -[#green]-> ..___example___deps___lib___h___lib
+..___example___deps___file_utils___ut "1" -[#green]-> ..___example___deps___logging___h___logging
+..___example___deps___it_data___fake___a "1" -[#green]-> ..___example___deps___it_data___fake___b___e
+..___example___deps___it_data___fake___a "1" -[#green]-> ..___example___deps___it_data___fake___d___e
+..___example___deps___it_data___fake___c "1" -[#green]-> ..___example___deps___it_data___fake___a___e
+..___example___deps___it_data___fake___b "1" -[#green]-> ..___example___deps___it_data___fake___c___e
+..___example___deps___it_data___fake___c "1" -[#green]-> ..___example___deps___it_data___fake___c___e
+..___example___deps___it_data___fake___d "1" -[#green]-> ..___example___deps___it_data___fake___e___e
+..___example___deps___it_data___fake___e "1" -[#green]-> ..___example___deps___it_data___fake___d___e
+..___example___deps___lib___ut "1" -[#green]-> ..___example___deps___lib___h___lib
+..___example___deps___logging___h___logging "1" -[#green]-> ..___example___deps___lib___h___lib
+..___example___deps___logging___src "1" -[#green]-> ..___example___deps___lib___h___lib
+..___example___deps___logging___ut "1" -[#green]-> ..___example___deps___lib___h___lib
+..___example___deps___logging___src "1" -[#green]-> ..___example___deps___logging___h___logging
+..___example___deps___logging___ut "1" -[#green]-> ..___example___deps___logging___h___logging
+..___example___deps___ut_data___app1 "6" <-[#red]-> "1" ..___example___deps___ut_data___app1___mod1
+..___example___deps___ut_data___app1 "3" <-[#red]-> "1" ..___example___deps___ut_data___app1___mod2___mod2_1
+..___example___deps___ut_data___app1 "3" <-[#red]-> "2" ..___example___deps___ut_data___app1___mod2___mod2_2
+..___example___deps___ut_data___app2 "3" -[#green]-> ..___example___deps___ut_data___app1
+..___example___deps___ut_data___app1___mod1 "1" -[#green]-> ..___example___deps___ut_data___app1___mod2
+..___example___deps___ut_data___app1___mod1 "1" <-[#red]-> "2" ..___example___deps___ut_data___app1___mod2___mod2_1
+..___example___deps___ut_data___app1___mod1 "1" <-[#red]-> "4" ..___example___deps___ut_data___app1___mod2___mod2_2
+..___example___deps___ut_data___app2 "4" -[#green]-> ..___example___deps___ut_data___app1___mod1
+..___example___deps___ut_data___app1___mod2___mod2_1 "1" <-[#red]-> "2" ..___example___deps___ut_data___app1___mod2___mod2_2
+..___example___deps___ut_data___app2 "2" -[#green]-> ..___example___deps___ut_data___app1___mod2___mod2_1
+..___example___deps___ut_data___app2 "2" -[#green]-> ..___example___deps___ut_data___app1___mod2___mod2_2
+
+@enduml

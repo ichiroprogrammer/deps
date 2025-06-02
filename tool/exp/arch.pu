@@ -1,0 +1,21 @@
+@startuml
+scale max 730 width
+rectangle "deps" as ..___example___deps {
+    rectangle "app" as ..___example___deps___app
+    rectangle "dependency" as ..___example___deps___dependency
+    rectangle "file_utils" as ..___example___deps___file_utils
+    rectangle "lib" as ..___example___deps___lib
+    rectangle "logging" as ..___example___deps___logging
+}
+
+..___example___deps___app "1" -[#green]-> ..___example___deps___dependency
+..___example___deps___app "4" -[#green]-> ..___example___deps___file_utils
+..___example___deps___app "3" -[#green]-> ..___example___deps___lib
+..___example___deps___app "1" -[#green]-> ..___example___deps___logging
+..___example___deps___dependency "24" -[#green]-> ..___example___deps___file_utils
+..___example___deps___dependency "4" -[#green]-> ..___example___deps___lib
+..___example___deps___file_utils "1" -[#green]-> ..___example___deps___lib
+..___example___deps___file_utils "1" -[#green]-> ..___example___deps___logging
+..___example___deps___logging "3" -[#green]-> ..___example___deps___lib
+
+@enduml
