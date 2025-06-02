@@ -584,12 +584,12 @@ dependencyをインポートするソースコードのインクルードディ�
 ```cpp
     //  example/deps/dependency/src/deps_scenario.cpp 7
 
-    #include "cpp_deps.h"                 // 実装用ヘッダファイル
-    #include "cpp_dir.h"                  // 実装用ヘッダファイル
-    #include "cpp_src.h"                  // 実装用ヘッダファイル
-    #include "dependency/deps_scenario.h" // dependencyパッケージからのインポート
-    #include "file_utils/load_store.h" // file_utilsパッケージからのインポート
-    #include "lib/nstd.h"              // libパッケージからのインポート
+    #include "cpp_deps.h"                  // 実装用ヘッダファイル
+    #include "cpp_dir.h"                   // 実装用ヘッダファイル
+    #include "cpp_src.h"                   // 実装用ヘッダファイル
+    #include "dependency/deps_scenario.h"  // dependencyパッケージからのインポート
+    #include "file_utils/load_store.h"     // file_utilsパッケージからのインポート
+    #include "lib/nstd.h"                  // libパッケージからのインポート
 ```
 
 上記から明らかな通り、このソースコードの外部パッケージとの依存関係が明確になる。

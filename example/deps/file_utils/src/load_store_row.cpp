@@ -8,25 +8,27 @@
 
 namespace FileUtils {
 
-bool StoreToStream(std::ostream &os, std::vector<std::string> const &lines) {
-  for (auto const &line : lines) {
-    os << line;
-  }
+bool StoreToStream(std::ostream& os, std::vector<std::string> const& lines)
+{
+    for (auto const& line : lines) {
+        os << line;
+    }
 
-  return true;
+    return true;
 }
 
-std::optional<std::vector<std::string>> Load_Strings(std::istream &is) {
-  auto content = std::vector<std::string>{};
-  auto line = std::string{};
+std::optional<std::vector<std::string>> Load_Strings(std::istream& is)
+{
+    auto content = std::vector<std::string>{};
+    auto line    = std::string{};
 
-  while (std::getline(is, line)) {
-    auto ss = std::ostringstream{};
+    while (std::getline(is, line)) {
+        auto ss = std::ostringstream{};
 
-    ss << line << std::endl;
-    content.emplace_back(ss.str());
-  }
+        ss << line << std::endl;
+        content.emplace_back(ss.str());
+    }
 
-  return content;
+    return content;
 }
-} // namespace FileUtils
+}  // namespace FileUtils
