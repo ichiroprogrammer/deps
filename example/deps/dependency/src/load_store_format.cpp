@@ -199,7 +199,7 @@ DepRelation gen_dep_rel(dep_half_t&& first, dep_half_t&& second)
 DepRels_t load_DepRelations_t(std::istream& is)
 {
     static auto const line_sep = std::regex{R"(^\s*$)"};
-    static auto const line_dep = std::regex{R"(^([\w/.-]+) -> ([\w/.-]+) : ([\d]+) *(.*)$)"};
+    static auto const line_dep = std::regex{R"(^([\w/+.-]+) -> ([\w/+.-]+) : ([\d]+) *(.*)$)"};
 
     auto line   = std::string{};
     auto first  = dep_half_t{};
@@ -207,7 +207,10 @@ DepRels_t load_DepRelations_t(std::istream& is)
 
     auto dep_rels = DepRels_t{};
 
+    auto pre_line = std::string{};
+    auto line_num = int{};
     while (std::getline(is, line)) {
+        ++line_num;
         if (auto results = std::smatch{}; std::regex_match(line, results, line_sep)) {
             dep_rels.emplace_back(gen_dep_rel(std::move(first), std::move(second)));
 
@@ -218,8 +221,12 @@ DepRels_t load_DepRelations_t(std::istream& is)
             (!first.valid ? first : second) = get_dep_half(results);
         }
         else {
+            std::cerr << "line num: " << line_num << std::endl;
+            std::cerr << "previous line : " << pre_line << std::endl;
+            std::cerr << "illegal line found : " << line << std::endl;
             assert(false);
         }
+        pre_line = std::move(line);
     }
 
     return dep_rels;
