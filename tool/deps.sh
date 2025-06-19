@@ -36,6 +36,10 @@ shift $(expr ${OPTIND} - 1)
 
 readonly TARGET_DIR=$1
 
+if [ ! -e $DEPS ]; then
+    (cd $BASE_DIR/.. && ./build.sh -g)
+fi
+
 if [ ! -d $OUT_DIR ]; then
     mkdir $OUT_DIR
 fi
