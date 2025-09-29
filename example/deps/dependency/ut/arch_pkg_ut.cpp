@@ -29,12 +29,10 @@ DepRels_t const dep_rels_simple3{
     // A -> B
     // A -> C -> D -> A
     //      C -> B
-    {DepRelation{"A", 1, Paths_t{}, "B", 0, Paths_t{}}},
-    {DepRelation{"A", 1, Paths_t{}, "C", 0, Paths_t{"a"}}},
+    {DepRelation{"A", 1, Paths_t{}, "B", 0, Paths_t{}}},    {DepRelation{"A", 1, Paths_t{}, "C", 0, Paths_t{"a"}}},
     {DepRelation{"A", 0, Paths_t{}, "D", 1, Paths_t{"a"}}},
 
-    {DepRelation{"B", 0, Paths_t{}, "C", 1, Paths_t{"b"}}},
-    {DepRelation{"B", 0, Paths_t{}, "D", 0, Paths_t{}}},
+    {DepRelation{"B", 0, Paths_t{}, "C", 1, Paths_t{"b"}}}, {DepRelation{"B", 0, Paths_t{}, "D", 0, Paths_t{}}},
     {DepRelation{"C", 1, Paths_t{"d"}, "D", 0, Paths_t{}}},
 };
 
@@ -46,20 +44,16 @@ DepRels_t const dep_rels_middle{
 };
 
 DepRels_t const dep_rels_complex{
-    {DepRelation{"ut_data/app1", 2,
-                 Paths_t{"ut_data/app1/mod1/mod1_1.hpp", "ut_data/app1/mod1/mod1_2.hpp"},
+    {DepRelation{"ut_data/app1", 2, Paths_t{"ut_data/app1/mod1/mod1_1.hpp", "ut_data/app1/mod1/mod1_2.hpp"},
                  "ut_data/app1/mod1", 0, Paths_t{}}},
     {DepRelation{"ut_data/app1", 0, Paths_t{}, "ut_data/app1/mod2", 0, Paths_t{}}},
     {DepRelation{"ut_data/app1", 0, Paths_t{}, "ut_data/app1/mod2/mod2_1", 0, Paths_t{}}},
-    {DepRelation{"ut_data/app1", 0, Paths_t{}, "ut_data/app1/mod2/mod2_2", 1,
-                 Paths_t{"ut_data/app1/a_1_cpp.h"}}},
-    {DepRelation{"ut_data/app1", 0, Paths_t{}, "ut_data/app2", 1,
-                 Paths_t{"ut_data/app1/a_2_cpp.hpp"}}},
-    {DepRelation{"ut_data/app1/mod1", 1, Paths_t{"ut_data/app1/mod2/mod2_1.hpp"},
-                 "ut_data/app1/mod2", 0, Paths_t{}}},
+    {DepRelation{"ut_data/app1", 0, Paths_t{}, "ut_data/app1/mod2/mod2_2", 1, Paths_t{"ut_data/app1/a_1_cpp.h"}}},
+    {DepRelation{"ut_data/app1", 0, Paths_t{}, "ut_data/app2", 1, Paths_t{"ut_data/app1/a_2_cpp.hpp"}}},
+    {DepRelation{"ut_data/app1/mod1", 1, Paths_t{"ut_data/app1/mod2/mod2_1.hpp"}, "ut_data/app1/mod2", 0, Paths_t{}}},
     {DepRelation{"ut_data/app1/mod1", 0, Paths_t{}, "ut_data/app1/mod2/mod2_1", 0, Paths_t{}}},
-    {DepRelation{"ut_data/app1/mod1", 1, Paths_t{"ut_data/app1/mod2/mod2_2/mod2_2_1.h"},
-                 "ut_data/app1/mod2/mod2_2", 0, Paths_t{}}},
+    {DepRelation{"ut_data/app1/mod1", 1, Paths_t{"ut_data/app1/mod2/mod2_2/mod2_2_1.h"}, "ut_data/app1/mod2/mod2_2", 0,
+                 Paths_t{}}},
     {DepRelation{"ut_data/app1/mod1", 0, Paths_t{}, "ut_data/app2", 2,
                  Paths_t{"ut_data/app1/mod1/mod1_1.hpp", "ut_data/app1/mod1/mod1_2.hpp"}}},
     {DepRelation{"ut_data/app1/mod2", 0, Paths_t{}, "ut_data/app1/mod2/mod2_1", 0, Paths_t{}}},

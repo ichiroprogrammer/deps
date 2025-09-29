@@ -13,10 +13,7 @@ using ArchPkgs_t = std::vector<ArchPkg const*>;
 
 class ArchPkg {
 public:
-    explicit ArchPkg(FileUtils::Path_t const& full_name)
-        : name_{full_name.filename()}, full_name_{full_name}
-    {
-    }
+    explicit ArchPkg(FileUtils::Path_t const& full_name) : name_{full_name.filename()}, full_name_{full_name} {}
 
     std::string const& Name() const noexcept { return name_; }
     ArchPkg const*     Parent() const noexcept { return parent_; }
@@ -43,18 +40,14 @@ private:
     void set_cyclic(ArchPkg const* pkg, bool is_cyclic) const;
 
     using Map_Path_ArchPkg_t = std::map<FileUtils::Path_t, ArchPkgPtr_t>;
-    static Map_Path_ArchPkg_t build_depend_on(DepRelation const&   dep_rel,
-                                              Map_Path_ArchPkg_t&& pkg_all);
+    static Map_Path_ArchPkg_t build_depend_on(DepRelation const& dep_rel, Map_Path_ArchPkg_t&& pkg_all);
     static Arch_t             build_children(Map_Path_ArchPkg_t&& pkg_all);
     static std::string        make_full_name(ArchPkg const& pkg);
     bool                      is_cyclic(ArchPkgs_t& history, size_t depth) const;
 };
 
 std::string          ToStringArch(Arch_t const& arch, uint32_t indent = 0);
-inline std::ostream& operator<<(std::ostream& os, Arch_t const& arch)
-{
-    return os << ToStringArch(arch);
-}
+inline std::ostream& operator<<(std::ostream& os, Arch_t const& arch) { return os << ToStringArch(arch); }
 
 std::string ToPlantUML_Rectangle(Arch_t const& arch, uint32_t indent = 0);
 std::string ToPlantUML_Rectangle(Arch_t const& arch, DepRels_t const& dep_rels);

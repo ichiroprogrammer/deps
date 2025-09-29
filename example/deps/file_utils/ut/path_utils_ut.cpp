@@ -111,9 +111,8 @@ TEST(path_utils, NormalizeLexically)
 
 TEST(path_utils, GenFilename2Path)
 {
-    auto const act_srcs
-        = Paths_t{"ut_data/app1/a_1_c.c", "ut_data/app1/a_1_c.h", "ut_data/app1/a_1_cpp.cpp",
-                  "ut_data/app1/a_1_cpp.h", "ut_data/app1/a_2_c.C"};
+    auto const act_srcs = Paths_t{"ut_data/app1/a_1_c.c", "ut_data/app1/a_1_c.h", "ut_data/app1/a_1_cpp.cpp",
+                                  "ut_data/app1/a_1_cpp.h", "ut_data/app1/a_2_c.C"};
 
     auto const act = GenFilename2Path(act_srcs);
 
@@ -161,12 +160,11 @@ TEST(path_utils, AssginSrcsToDirs)
 
         auto const exp = Dirs2Srcs_t{
             {"ut_data/app1",
-             {"ut_data/app1/a_1_c.c", "ut_data/app1/a_1_c.h", "ut_data/app1/a_1_cpp.cpp",
-              "ut_data/app1/a_1_cpp.h", "ut_data/app1/a_2_c.C", "ut_data/app1/a_2_c.H",
-              "ut_data/app1/a_2_cpp.cxx", "ut_data/app1/a_2_cpp.hpp", "ut_data/app1/a_3_cpp.cc"}},
+             {"ut_data/app1/a_1_c.c", "ut_data/app1/a_1_c.h", "ut_data/app1/a_1_cpp.cpp", "ut_data/app1/a_1_cpp.h",
+              "ut_data/app1/a_2_c.C", "ut_data/app1/a_2_c.H", "ut_data/app1/a_2_cpp.cxx", "ut_data/app1/a_2_cpp.hpp",
+              "ut_data/app1/a_3_cpp.cc"}},
             {"ut_data/app1/mod1",
-             {"ut_data/app1/mod1/mod1_1.cpp", "ut_data/app1/mod1/mod1_1.hpp",
-              "ut_data/app1/mod1/mod1_2.hpp"}},
+             {"ut_data/app1/mod1/mod1_1.cpp", "ut_data/app1/mod1/mod1_1.hpp", "ut_data/app1/mod1/mod1_2.hpp"}},
             {"ut_data/app1/mod2", {"ut_data/app1/mod2/mod2_1.cpp", "ut_data/app1/mod2/mod2_1.hpp"}},
             {"ut_data/app1/mod2/mod2_1",
              {"ut_data/app1/mod2/mod2_1/mod2_1_1.cpp", "ut_data/app1/mod2/mod2_1/mod2_1_1.h"}},
@@ -179,8 +177,7 @@ TEST(path_utils, AssginSrcsToDirs)
     }
     {
         auto const exp_dirs = Paths_t{".", "ut_data/app1/mod1"};
-        auto const exp_srcs = Paths_t{"path_utils.cpp", "ut_data/app1/mod1/mod1_1.cpp",
-                                      "ut_data/app1/mod1/mod1_1.hpp"};
+        auto const exp_srcs = Paths_t{"path_utils.cpp", "ut_data/app1/mod1/mod1_1.cpp", "ut_data/app1/mod1/mod1_1.hpp"};
 
         auto const act = AssginSrcsToDirs(exp_dirs, exp_srcs);
 
@@ -223,17 +220,14 @@ TEST(path_utils, PackageSrcMatcher2)
 
     auto const exp = Dirs2Srcs_t{
         {"ut_data",
-         {"ut_data/app1/a_1_c.c", "ut_data/app1/a_1_c.h", "ut_data/app1/a_1_cpp.cpp",
-          "ut_data/app1/a_1_cpp.h", "ut_data/app1/a_2_c.C", "ut_data/app1/a_2_c.H",
-          "ut_data/app1/a_2_cpp.cxx", "ut_data/app1/a_2_cpp.hpp", "ut_data/app1/a_3_cpp.cc",
-          "ut_data/app1/mod1/mod1_1.cpp", "ut_data/app1/mod1/mod1_1.hpp",
+         {"ut_data/app1/a_1_c.c", "ut_data/app1/a_1_c.h", "ut_data/app1/a_1_cpp.cpp", "ut_data/app1/a_1_cpp.h",
+          "ut_data/app1/a_2_c.C", "ut_data/app1/a_2_c.H", "ut_data/app1/a_2_cpp.cxx", "ut_data/app1/a_2_cpp.hpp",
+          "ut_data/app1/a_3_cpp.cc", "ut_data/app1/mod1/mod1_1.cpp", "ut_data/app1/mod1/mod1_1.hpp",
           "ut_data/app1/mod1/mod1_2.hpp"}},
         {"ut_data/app1", {}},
         {"ut_data/app1/mod2", {"ut_data/app1/mod2/mod2_1.cpp", "ut_data/app1/mod2/mod2_1.hpp"}},
-        {"ut_data/app1/mod2/mod2_1",
-         {"ut_data/app1/mod2/mod2_1/mod2_1_1.cpp", "ut_data/app1/mod2/mod2_1/mod2_1_1.h"}},
-        {"ut_data/app1/mod2/mod2_2",
-         {"ut_data/app1/mod2/mod2_2/mod2_2_1.cpp", "ut_data/app1/mod2/mod2_2/mod2_2_1.h"}},
+        {"ut_data/app1/mod2/mod2_1", {"ut_data/app1/mod2/mod2_1/mod2_1_1.cpp", "ut_data/app1/mod2/mod2_1/mod2_1_1.h"}},
+        {"ut_data/app1/mod2/mod2_2", {"ut_data/app1/mod2/mod2_2/mod2_2_1.cpp", "ut_data/app1/mod2/mod2_2/mod2_2_1.h"}},
         {"ut_data/app2", {"ut_data/app2/b_1.cpp", "ut_data/app2/b_1.h"}},
     };
 
@@ -242,8 +236,7 @@ TEST(path_utils, PackageSrcMatcher2)
 
 TEST(path_utils, PackageSrcMatcher3)
 {
-    auto const exp_dirs
-        = Paths_t{"ut_data/app1/mod2/mod2_1", "ut_data/app1/mod2/mod2_2", "ut_data/app2"};
+    auto const exp_dirs = Paths_t{"ut_data/app1/mod2/mod2_1", "ut_data/app1/mod2/mod2_2", "ut_data/app2"};
 
     auto const exp_srcs = Paths_t{"ut_data/app1/a_1_c.c",
                                   "ut_data/app1/mod1/mod1_1.cpp",
@@ -261,15 +254,12 @@ TEST(path_utils, PackageSrcMatcher3)
     auto const act = AssginSrcsToDirs(exp_dirs, exp_srcs);
 
     auto const exp = Dirs2Srcs_t{
-        {"ut_data/app1/mod2/mod2_1",
-         {"ut_data/app1/mod2/mod2_1/mod2_1_1.cpp", "ut_data/app1/mod2/mod2_1/mod2_1_1.h"}},
-        {"ut_data/app1/mod2/mod2_2",
-         {"ut_data/app1/mod2/mod2_2/mod2_2_1.cpp", "ut_data/app1/mod2/mod2_2/mod2_2_1.h"}},
+        {"ut_data/app1/mod2/mod2_1", {"ut_data/app1/mod2/mod2_1/mod2_1_1.cpp", "ut_data/app1/mod2/mod2_1/mod2_1_1.h"}},
+        {"ut_data/app1/mod2/mod2_2", {"ut_data/app1/mod2/mod2_2/mod2_2_1.cpp", "ut_data/app1/mod2/mod2_2/mod2_2_1.h"}},
         {"ut_data/app2", {"ut_data/app2/b_1.cpp", "ut_data/app2/b_1.h"}},
         {"no_package",
          {"ut_data/app1/a_1_c.c", "ut_data/app1/mod1/mod1_1.cpp", "ut_data/app1/mod1/mod1_1.hpp",
-          "ut_data/app1/mod1/mod1_2.hpp", "ut_data/app1/mod2/mod2_1.cpp",
-          "ut_data/app1/mod2/mod2_1.hpp"}},
+          "ut_data/app1/mod1/mod1_2.hpp", "ut_data/app1/mod2/mod2_1.cpp", "ut_data/app1/mod2/mod2_1.hpp"}},
     };
 
     ASSERT_EQ(act, exp);
@@ -295,9 +285,9 @@ TEST(path_utils, ToString_Path)
 
 TEST(path_utils, ToString_Paths)
 {
-    auto const exp_srcs = Paths_t{"ut_data/app1/a_1_c.c", "ut_data/app1/mod1/mod1_1.cpp",
-                                  "ut_data/app1/mod2/mod2_1/mod2_1_1.cpp",
-                                  "ut_data/app1/mod2/mod2_1/mod2_1_1.h", "ut_data/app2/b_1.h"};
+    auto const exp_srcs
+        = Paths_t{"ut_data/app1/a_1_c.c", "ut_data/app1/mod1/mod1_1.cpp", "ut_data/app1/mod2/mod2_1/mod2_1_1.cpp",
+                  "ut_data/app1/mod2/mod2_1/mod2_1_1.h", "ut_data/app2/b_1.h"};
 
     auto const exp = std::string{
         "ut_data/app1/a_1_c.c "

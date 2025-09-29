@@ -14,16 +14,16 @@ TEST(cpp_dir, GenCppDirs)
     auto const db           = FileUtils::GenFilename2Path(srcs);
     auto const cpp_dirs     = CppDirs_t{GenCppDirs(srcs, db)};
 
-    auto a_1_cpp = std::find_if(cpp_dirs.begin(), cpp_dirs.end(),
-                                [](CppDir const& pkg) { return pkg.Path() == "a_1_cpp.cpp"; });
+    auto a_1_cpp
+        = std::find_if(cpp_dirs.begin(), cpp_dirs.end(), [](CppDir const& pkg) { return pkg.Path() == "a_1_cpp.cpp"; });
     ASSERT_NE(a_1_cpp, cpp_dirs.end());
 
-    auto a_1_cpp_h = std::find_if(cpp_dirs.begin(), cpp_dirs.end(),
-                                  [](CppDir const& pkg) { return pkg.Path() == "a_1_cpp.h"; });
+    auto a_1_cpp_h
+        = std::find_if(cpp_dirs.begin(), cpp_dirs.end(), [](CppDir const& pkg) { return pkg.Path() == "a_1_cpp.h"; });
     ASSERT_NE(a_1_cpp_h, cpp_dirs.end());
 
-    auto mod2_2_1_h = std::find_if(cpp_dirs.begin(), cpp_dirs.end(),
-                                   [](CppDir const& pkg) { return pkg.Path() == "mod2_2_1.h"; });
+    auto mod2_2_1_h
+        = std::find_if(cpp_dirs.begin(), cpp_dirs.end(), [](CppDir const& pkg) { return pkg.Path() == "mod2_2_1.h"; });
     ASSERT_NE(mod2_2_1_h, cpp_dirs.end());
 
     auto ret_a_1_cpp = std::pair<uint32_t, Paths_t>{a_1_cpp->DependsOn(*a_1_cpp_h)};
@@ -55,8 +55,7 @@ TEST(cpp_dir, CppDir)
 
     auto ret_app2 = std::pair<uint32_t, Paths_t>{app2.DependsOn(mod1)};
     ASSERT_EQ(4, ret_app2.first);
-    ASSERT_EQ((Paths_t{"ut_data/app1/mod1/mod1_1.hpp", "ut_data/app1/mod1/mod1_2.hpp"}),
-              ret_app2.second);
+    ASSERT_EQ((Paths_t{"ut_data/app1/mod1/mod1_1.hpp", "ut_data/app1/mod1/mod1_2.hpp"}), ret_app2.second);
 }
 
 TEST(cpp_dir, operator_eq_tl)

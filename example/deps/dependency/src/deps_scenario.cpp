@@ -52,8 +52,8 @@ FileUtils::Paths_t remove_dirs_match_pattern(FileUtils::Paths_t&& dirs, std::str
 
 // first  dirs配下のソースファイルを含むディレクトリ(パッケージ)
 // second 上記パッケージに含まれるソースファイル
-std::pair<FileUtils::Paths_t, FileUtils::Dirs2Srcs_t> gen_dirs_and_dirs2srcs(
-    FileUtils::Paths_t const& dirs, bool recursive, std::string const& pattern)
+std::pair<FileUtils::Paths_t, FileUtils::Dirs2Srcs_t> gen_dirs_and_dirs2srcs(FileUtils::Paths_t const& dirs,
+                                                                             bool recursive, std::string const& pattern)
 {
     auto ret      = std::pair<FileUtils::Paths_t, FileUtils::Paths_t>{GetCppDirsSrcs(dirs)};
     auto srcs     = FileUtils::Paths_t{std::move(ret.second)};
@@ -66,11 +66,10 @@ std::pair<FileUtils::Paths_t, FileUtils::Dirs2Srcs_t> gen_dirs_and_dirs2srcs(
     return {std::move(dirs_pkg), std::move(dirs2srcs)};
 }
 
-FileUtils::Paths_t gen_dirs(FileUtils::Paths_t const& dirs, bool recursive,
-                            std::string const& pattern)
+FileUtils::Paths_t gen_dirs(FileUtils::Paths_t const& dirs, bool recursive, std::string const& pattern)
 {
-    auto dirs2srcs = std::pair<FileUtils::Paths_t, FileUtils::Dirs2Srcs_t>{
-        gen_dirs_and_dirs2srcs(dirs, recursive, pattern)};
+    auto dirs2srcs
+        = std::pair<FileUtils::Paths_t, FileUtils::Dirs2Srcs_t>{gen_dirs_and_dirs2srcs(dirs, recursive, pattern)};
 
     auto dirs_pkg = FileUtils::Paths_t{std::move(dirs2srcs.first)};
     auto assign   = FileUtils::Dirs2Srcs_t{std::move(dirs2srcs.second)};
@@ -88,8 +87,8 @@ FileUtils::Paths_t gen_dirs(FileUtils::Paths_t const& dirs, bool recursive,
     return ret;
 }
 
-FileUtils::Paths_t gen_dirs(std::string const& in, bool recursive,
-                            FileUtils::Paths_t const& dirs_opt, std::string const& pattern)
+FileUtils::Paths_t gen_dirs(std::string const& in, bool recursive, FileUtils::Paths_t const& dirs_opt,
+                            std::string const& pattern)
 {
     auto dirs = FileUtils::Paths_t{};
 
@@ -112,15 +111,14 @@ FileUtils::Paths_t gen_dirs(std::string const& in, bool recursive,
 
 bool includes(FileUtils::Paths_t const& dirs, FileUtils::Path_t const& dir) noexcept
 {
-    auto const count
-        = std::count_if(dirs.cbegin(), dirs.cend(),
-                        [&dir](auto const& dir_in_dirs) noexcept { return dir_in_dirs == dir; });
+    auto const count = std::count_if(dirs.cbegin(), dirs.cend(),
+                                     [&dir](auto const& dir_in_dirs) noexcept { return dir_in_dirs == dir; });
 
     return count != 0;
 }
 
-FileUtils::Dirs2Srcs_t dirs2srcs_to_src2src(FileUtils::Paths_t const&    dirs_opt,
-                                            FileUtils::Dirs2Srcs_t const dirs2srcs, bool recursive)
+FileUtils::Dirs2Srcs_t dirs2srcs_to_src2src(FileUtils::Paths_t const& dirs_opt, FileUtils::Dirs2Srcs_t const dirs2srcs,
+                                            bool recursive)
 {
     auto ret = FileUtils::Dirs2Srcs_t{};
 
@@ -180,8 +178,7 @@ FileUtils::Dirs2Srcs_t gen_dirs2srcs(std::string const& in, bool recursive, bool
         return dirs2srcs;
     }
 
-    std::pair<FileUtils::Paths_t, FileUtils::Dirs2Srcs_t> ret
-        = gen_dirs_and_dirs2srcs(dirs, recursive, pattern);
+    std::pair<FileUtils::Paths_t, FileUtils::Dirs2Srcs_t> ret = gen_dirs_and_dirs2srcs(dirs, recursive, pattern);
 
     auto dirs_pkg = FileUtils::Paths_t{std::move(ret.first)};
     auto assign   = FileUtils::Dirs2Srcs_t{std::move(ret.second)};
@@ -202,8 +199,8 @@ FileUtils::Filename2Path_t gen_src_db(FileUtils::Dirs2Srcs_t const& dir2srcs)
 }
 }  // namespace
 
-PkgGenerator::PkgGenerator(std::string const& in, bool recursive,
-                           FileUtils::Paths_t const& dirs_opt, std::string const& pattern)
+PkgGenerator::PkgGenerator(std::string const& in, bool recursive, FileUtils::Paths_t const& dirs_opt,
+                           std::string const& pattern)
     : dirs_{gen_dirs(in, recursive, dirs_opt, pattern)}
 {
 }
@@ -215,8 +212,8 @@ bool PkgGenerator::Output(std::ostream& os) const
     return true;
 }
 
-SrcsGenerator::SrcsGenerator(std::string const& in, bool recursive,
-                             FileUtils::Paths_t const& dirs_opt, std::string const& pattern)
+SrcsGenerator::SrcsGenerator(std::string const& in, bool recursive, FileUtils::Paths_t const& dirs_opt,
+                             std::string const& pattern)
     : dirs_{gen_dirs(in, recursive, dirs_opt, pattern)}
 {
 }
@@ -292,17 +289,12 @@ DepRels_t gen_dep_rel(std::string const& in)
 }  // namespace
 
 struct ArchGenerator::Impl {
-    Impl(DepRels_t&& a_dep_rels) : dep_rels(std::move(a_dep_rels)), arch(ArchPkg::GenArch(dep_rels))
-    {
-    }
+    Impl(DepRels_t&& a_dep_rels) : dep_rels(std::move(a_dep_rels)), arch(ArchPkg::GenArch(dep_rels)) {}
     DepRels_t const dep_rels;
     Arch_t const    arch;
 };
 
-ArchGenerator::ArchGenerator(std::string const& in)
-    : impl_{std::make_unique<ArchGenerator::Impl>(gen_dep_rel(in))}
-{
-}
+ArchGenerator::ArchGenerator(std::string const& in) : impl_{std::make_unique<ArchGenerator::Impl>(gen_dep_rel(in))} {}
 
 bool ArchGenerator::Output(std::ostream& os) const
 {

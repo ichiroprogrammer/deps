@@ -26,9 +26,9 @@ TEST(cpp_src, CppSrc)
 
     auto const cpp_src2 = CppSrc{"ut_data/app1/a_1_cpp.h", db};
 
-    auto const exp_incs2 = Paths_t{
-        "ut_data/app1/a_1_cpp.h", "ut_data/app1/mod1/mod1_1.hpp", "ut_data/app1/mod1/mod1_2.hpp",
-        "ut_data/app1/mod2/mod2_1/mod2_1_1.h", "ut_data/app1/mod2/mod2_2/mod2_2_1.h"};
+    auto const exp_incs2
+        = Paths_t{"ut_data/app1/a_1_cpp.h", "ut_data/app1/mod1/mod1_1.hpp", "ut_data/app1/mod1/mod1_2.hpp",
+                  "ut_data/app1/mod2/mod2_1/mod2_1_1.h", "ut_data/app1/mod2/mod2_2/mod2_2_1.h"};
     ASSERT_EQ(cpp_src2.GetIncs(), exp_incs2);
 
     ASSERT_EQ(cpp_src2.GetIncsNotFound(), Paths_t{});
@@ -46,16 +46,14 @@ TEST(cpp_src, GenCppSrc)
 
     auto const [act_dirs, act_srcs] = GetCppDirsSrcs({"ut_data/app1"});
     auto const db                   = FileUtils::GenFilename2Path(act_srcs);
-    auto const srcs
-        = Paths_t{"ut_data/app1/a_1_c.c", "ut_data/app1/a_1_c.h", "ut_data/app1/a_1_cpp.cpp"};
+    auto const srcs         = Paths_t{"ut_data/app1/a_1_c.c", "ut_data/app1/a_1_c.h", "ut_data/app1/a_1_cpp.cpp"};
     auto const cpp_srcs_act = GenCppSrc(srcs, db);
 
     ASSERT_EQ(cpp_srcs_act.size(), 3);
 
     Paths_t const exp_incs[]{
         {"ut_data/app1/a_1_c.h", "ut_data/app1/a_1_cpp.h", "ut_data/app1/mod1/mod1_1.hpp",
-         "ut_data/app1/mod1/mod1_2.hpp", "ut_data/app1/mod2/mod2_1/mod2_1_1.h",
-         "ut_data/app1/mod2/mod2_2/mod2_2_1.h"},
+         "ut_data/app1/mod1/mod1_2.hpp", "ut_data/app1/mod2/mod2_1/mod2_1_1.h", "ut_data/app1/mod2/mod2_2/mod2_2_1.h"},
         {"ut_data/app1/a_1_cpp.h", "ut_data/app1/mod1/mod1_1.hpp", "ut_data/app1/mod1/mod1_2.hpp",
          "ut_data/app1/mod2/mod2_1/mod2_1_1.h", "ut_data/app1/mod2/mod2_2/mod2_2_1.h"},
         {},

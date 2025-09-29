@@ -14,13 +14,11 @@ std::string ToStringDepRel(DepRelation const& rep_rel)
 {
     auto ss = std::ostringstream{};
 
-    ss << FileUtils::ToStringPath(rep_rel.PackageA) << " -> "
-       << FileUtils::ToStringPath(rep_rel.PackageB) << " : " << rep_rel.CountAtoB << " "
-       << FileUtils::ToStringPaths(rep_rel.IncsAtoB, " ") << std::endl;
+    ss << FileUtils::ToStringPath(rep_rel.PackageA) << " -> " << FileUtils::ToStringPath(rep_rel.PackageB) << " : "
+       << rep_rel.CountAtoB << " " << FileUtils::ToStringPaths(rep_rel.IncsAtoB, " ") << std::endl;
 
-    ss << FileUtils::ToStringPath(rep_rel.PackageB) << " -> "
-       << FileUtils::ToStringPath(rep_rel.PackageA) << " : " << rep_rel.CountBtoA << " "
-       << FileUtils::ToStringPaths(rep_rel.IncsBtoA, " ");
+    ss << FileUtils::ToStringPath(rep_rel.PackageB) << " -> " << FileUtils::ToStringPath(rep_rel.PackageA) << " : "
+       << rep_rel.CountBtoA << " " << FileUtils::ToStringPaths(rep_rel.IncsBtoA, " ");
 
     return ss.str();
 }

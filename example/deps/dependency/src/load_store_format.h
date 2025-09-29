@@ -13,7 +13,7 @@ bool                              StoreToStream(std::ostream& os, FileUtils::Pat
 std::optional<FileUtils::Paths_t> Load_Paths(std::istream& is);
 
 // Dirs2Srcs_t
-bool StoreToStream(std::ostream& os, FileUtils::Dirs2Srcs_t const& dirs2srcs);
+bool                                  StoreToStream(std::ostream& os, FileUtils::Dirs2Srcs_t const& dirs2srcs);
 std::optional<FileUtils::Dirs2Srcs_t> Load_Dirs2Srcs(std::istream& is);
 
 // DepRels_t

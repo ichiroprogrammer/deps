@@ -35,8 +35,7 @@ TEST(cpp_deps, GenDepRels)
         ASSERT_EQ(6, app1_mod1->CountAtoB);
         ASSERT_EQ(1, app1_mod1->CountBtoA);
 
-        auto const app1_mod1_IncsAtoB
-            = Paths_t{"ut_data/app1/mod1/mod1_1.hpp", "ut_data/app1/mod1/mod1_2.hpp"};
+        auto const app1_mod1_IncsAtoB = Paths_t{"ut_data/app1/mod1/mod1_1.hpp", "ut_data/app1/mod1/mod1_2.hpp"};
 
         ASSERT_EQ(app1_mod1_IncsAtoB, app1_mod1->IncsAtoB);
         ASSERT_EQ(Paths_t{"ut_data/app1/a_1_cpp.h"}, app1_mod1->IncsBtoA);
@@ -49,8 +48,7 @@ TEST(cpp_deps, GenDepRels)
         ASSERT_EQ(6, app1_mod1->CountAtoB);
         ASSERT_EQ(1, app1_mod1->CountBtoA);
 
-        auto const app1_mod1_IncsAtoB
-            = Paths_t{"ut_data/app1/mod1/mod1_1.hpp", "ut_data/app1/mod1/mod1_2.hpp"};
+        auto const app1_mod1_IncsAtoB = Paths_t{"ut_data/app1/mod1/mod1_1.hpp", "ut_data/app1/mod1/mod1_2.hpp"};
 
         ASSERT_EQ(app1_mod1_IncsAtoB, app1_mod1->IncsAtoB);
         ASSERT_EQ(Paths_t{"ut_data/app1/a_1_cpp.h"}, app1_mod1->IncsBtoA);
@@ -66,8 +64,7 @@ TEST(cpp_deps, GenDepRels)
         auto const mod1_mod2_2_IncsAtoB = Paths_t{"ut_data/app1/mod2/mod2_2/mod2_2_1.h"};
 
         ASSERT_EQ(mod1_mod2_2_IncsAtoB, mod1_mod2_2->IncsAtoB);
-        ASSERT_EQ((Paths_t{"ut_data/app1/mod1/mod1_1.hpp", "ut_data/app1/mod1/mod1_2.hpp"}),
-                  mod1_mod2_2->IncsBtoA);
+        ASSERT_EQ((Paths_t{"ut_data/app1/mod1/mod1_1.hpp", "ut_data/app1/mod1/mod1_2.hpp"}), mod1_mod2_2->IncsBtoA);
     }
     {
         auto const app1_mod2_2 = FindDepRels(dep_all, app1, mod2_2);

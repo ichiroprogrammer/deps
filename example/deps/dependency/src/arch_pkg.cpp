@@ -73,8 +73,7 @@ bool ArchPkg::IsCyclic() const noexcept
     return false;
 }
 
-ArchPkg::Map_Path_ArchPkg_t ArchPkg::build_depend_on(DepRelation const&   dep_rel,
-                                                     Map_Path_ArchPkg_t&& pkg_all)
+ArchPkg::Map_Path_ArchPkg_t ArchPkg::build_depend_on(DepRelation const& dep_rel, Map_Path_ArchPkg_t&& pkg_all)
 {
     auto const a_path = FileUtils::Path_t(dep_rel.PackageA);
     if (pkg_all.count(a_path) == 0) {
@@ -113,8 +112,7 @@ Arch_t ArchPkg::build_children(Map_Path_ArchPkg_t&& pkg_all)
             top.emplace_back(std::move(pkg));
         }
         else {
-            ArchPkg* parent = cache.count(parent_name) != 0 ? cache.at(parent_name)
-                                                            : pkg_all.at(parent_name).get();
+            ArchPkg* parent = cache.count(parent_name) != 0 ? cache.at(parent_name) : pkg_all.at(parent_name).get();
 
             pkg->parent_ = parent;
             parent->children_.emplace_back(std::move(pkg));
@@ -237,8 +235,7 @@ std::string to_string_pkg(ArchPkg const& arch_pkg, uint32_t indent)
 
     ss << indent_str << package << arch_pkg.Name() << cyclic_str(arch_pkg) << std::endl;
     ss << indent_str << full << arch_pkg.FullName() << std::endl;
-    ss << indent_str << parent << (arch_pkg.Parent() ? arch_pkg.Parent()->Name() : top)
-       << std::endl;
+    ss << indent_str << parent << (arch_pkg.Parent() ? arch_pkg.Parent()->Name() : top) << std::endl;
 
     ss << indent_str << depend_on;
     if (arch_pkg.DependOn().size() != 0) {
@@ -326,8 +323,7 @@ bool dep_is_cyclic(std::string const& from, std::string const& to, Arch_t const&
     return pkg_from->IsCyclic(*pkg_to);
 }
 
-std::string_view pu_link_color(std::string const& from, std::string const& to,
-                               Arch_t const& arch) noexcept
+std::string_view pu_link_color(std::string const& from, std::string const& to, Arch_t const& arch) noexcept
 {
     return dep_is_cyclic(from, to, arch) ? "orange" : "green";
 }
@@ -348,8 +344,8 @@ std::string to_pu_rectangle(Arch_t const& arch, DepRelation const& dep_rel)
         }
     }
     else if (dep_rel.CountBtoA != 0) {
-        ss << b << " \"" << dep_rel.CountBtoA << "\" -[#"
-           << pu_link_color(dep_rel.PackageB, dep_rel.PackageA, arch) << "]-> " << a;
+        ss << b << " \"" << dep_rel.CountBtoA << "\" -[#" << pu_link_color(dep_rel.PackageB, dep_rel.PackageA, arch)
+           << "]-> " << a;
     }
 
     return ss.str();

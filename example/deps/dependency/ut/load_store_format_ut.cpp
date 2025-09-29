@@ -16,8 +16,7 @@ TEST(load_store_format, Paths_t)
 
     FileUtils::RemoveFile(pkg_act);
 
-    auto const dir_in
-        = Paths_t{"ut_data/app1", "ut_data/app1/mod1", "ut_data/app1/mod2/mod2_1", "ut_data/app2"};
+    auto const dir_in = Paths_t{"ut_data/app1", "ut_data/app1/mod1", "ut_data/app1/mod2/mod2_1", "ut_data/app2"};
 
     // ディレクトリなのでエラーなはず
     ASSERT_FALSE(FileUtils::StoreToFile("ut_data/app1", dir_in, StoreToStream));
@@ -45,16 +44,13 @@ TEST(load_store_format, Dirs2Srcs_t)
 
     const auto dir2srcs_in = FileUtils::Dirs2Srcs_t{
         {"ut_data",
-         {"ut_data/app1/a_1_c.c", "ut_data/app1/a_1_c.h", "ut_data/app1/a_1_cpp.cpp",
-          "ut_data/app1/a_1_cpp.h", "ut_data/app1/a_2_c.C", "ut_data/app1/a_2_c.H",
-          "ut_data/app1/a_2_cpp.cxx", "ut_data/app1/a_2_cpp.hpp", "ut_data/app1/a_3_cpp.cc",
-          "ut_data/app1/mod1/mod1_1.cpp", "ut_data/app1/mod1/mod1_1.hpp",
+         {"ut_data/app1/a_1_c.c", "ut_data/app1/a_1_c.h", "ut_data/app1/a_1_cpp.cpp", "ut_data/app1/a_1_cpp.h",
+          "ut_data/app1/a_2_c.C", "ut_data/app1/a_2_c.H", "ut_data/app1/a_2_cpp.cxx", "ut_data/app1/a_2_cpp.hpp",
+          "ut_data/app1/a_3_cpp.cc", "ut_data/app1/mod1/mod1_1.cpp", "ut_data/app1/mod1/mod1_1.hpp",
           "ut_data/app1/mod1/mod1_2.hpp"}},
         {"ut_data/app1/mod2", {"ut_data/app1/mod2/mod2_1.cpp", "ut_data/app1/mod2/mod2_1.hpp"}},
-        {"ut_data/app1/mod2/mod2_1",
-         {"ut_data/app1/mod2/mod2_1/mod2_1_1.cpp", "ut_data/app1/mod2/mod2_1/mod2_1_1.h"}},
-        {"ut_data/app1/mod2/mod2_2",
-         {"ut_data/app1/mod2/mod2_2/mod2_2_1.cpp", "ut_data/app1/mod2/mod2_2/mod2_2_1.h"}},
+        {"ut_data/app1/mod2/mod2_1", {"ut_data/app1/mod2/mod2_1/mod2_1_1.cpp", "ut_data/app1/mod2/mod2_1/mod2_1_1.h"}},
+        {"ut_data/app1/mod2/mod2_2", {"ut_data/app1/mod2/mod2_2/mod2_2_1.cpp", "ut_data/app1/mod2/mod2_2/mod2_2_1.h"}},
         {"ut_data/app2", {"ut_data/app2/b_1.cpp", "ut_data/app2/b_1.h"}},
     };
 
@@ -63,12 +59,10 @@ TEST(load_store_format, Dirs2Srcs_t)
 
     ASSERT_TRUE(FileUtils::StoreToFile(dirs2srcs_act, dir2srcs_in, StoreToStream));
 
-    auto dir2srcs_out0 = std::optional<FileUtils::Dirs2Srcs_t>{
-        FileUtils::LoadFromFile(dirs2srcs_org, Load_Dirs2Srcs)};
+    auto dir2srcs_out0 = std::optional<FileUtils::Dirs2Srcs_t>{FileUtils::LoadFromFile(dirs2srcs_org, Load_Dirs2Srcs)};
     ASSERT_TRUE(dir2srcs_out0);
 
-    auto dir2srcs_out1 = std::optional<FileUtils::Dirs2Srcs_t>{
-        FileUtils::LoadFromFile(dirs2srcs_act, Load_Dirs2Srcs)};
+    auto dir2srcs_out1 = std::optional<FileUtils::Dirs2Srcs_t>{FileUtils::LoadFromFile(dirs2srcs_act, Load_Dirs2Srcs)};
     ASSERT_TRUE(dir2srcs_out1);
 
     ASSERT_EQ(dir2srcs_in, *dir2srcs_out0);
@@ -81,20 +75,16 @@ namespace {
 using FileUtils::Paths_t;
 
 DepRels_t const dep_rels{
-    {DepRelation{"ut_data/app1", 2,
-                 Paths_t{"ut_data/app1/mod1/mod1_1.hpp", "ut_data/app1/mod1/mod1_2.hpp"},
+    {DepRelation{"ut_data/app1", 2, Paths_t{"ut_data/app1/mod1/mod1_1.hpp", "ut_data/app1/mod1/mod1_2.hpp"},
                  "ut_data/app1/mod1", 0, Paths_t{}}},
     {DepRelation{"ut_data/app1", 0, Paths_t{}, "ut_data/app1/mod2", 0, Paths_t{}}},
     {DepRelation{"ut_data/app1", 0, Paths_t{}, "ut_data/app1/mod2/mod2_1", 0, Paths_t{}}},
-    {DepRelation{"ut_data/app1", 0, Paths_t{}, "ut_data/app1/mod2/mod2_2", 1,
-                 Paths_t{"ut_data/app1/a_1_cpp.h"}}},
-    {DepRelation{"ut_data/app1", 0, Paths_t{}, "ut_data/app2", 1,
-                 Paths_t{"ut_data/app1/a_2_cpp.hpp"}}},
-    {DepRelation{"ut_data/app1/mod1", 1, Paths_t{"ut_data/app1/mod2/mod2_1.hpp"},
-                 "ut_data/app1/mod2", 0, Paths_t{}}},
+    {DepRelation{"ut_data/app1", 0, Paths_t{}, "ut_data/app1/mod2/mod2_2", 1, Paths_t{"ut_data/app1/a_1_cpp.h"}}},
+    {DepRelation{"ut_data/app1", 0, Paths_t{}, "ut_data/app2", 1, Paths_t{"ut_data/app1/a_2_cpp.hpp"}}},
+    {DepRelation{"ut_data/app1/mod1", 1, Paths_t{"ut_data/app1/mod2/mod2_1.hpp"}, "ut_data/app1/mod2", 0, Paths_t{}}},
     {DepRelation{"ut_data/app1/mod1", 0, Paths_t{}, "ut_data/app1/mod2/mod2_1", 0, Paths_t{}}},
-    {DepRelation{"ut_data/app1/mod1", 1, Paths_t{"ut_data/app1/mod2/mod2_2/mod2_2_1.h"},
-                 "ut_data/app1/mod2/mod2_2", 0, Paths_t{}}},
+    {DepRelation{"ut_data/app1/mod1", 1, Paths_t{"ut_data/app1/mod2/mod2_2/mod2_2_1.h"}, "ut_data/app1/mod2/mod2_2", 0,
+                 Paths_t{}}},
     {DepRelation{"ut_data/app1/mod1", 0, Paths_t{}, "ut_data/app2", 2,
                  Paths_t{"ut_data/app1/mod1/mod1_1.hpp", "ut_data/app1/mod1/mod1_2.hpp"}}},
     {DepRelation{"ut_data/app1/mod2", 0, Paths_t{}, "ut_data/app1/mod2/mod2_1", 0, Paths_t{}}},
@@ -158,15 +148,13 @@ TEST(load_store_format, Arch_t)
 
     FileUtils::RemoveFile(arch_act);
 
-    auto row_exp = std::optional<std::vector<std::string>>{
-        FileUtils::LoadFromFile(arch_exp, FileUtils::Load_Strings)};
+    auto row_exp = std::optional<std::vector<std::string>>{FileUtils::LoadFromFile(arch_exp, FileUtils::Load_Strings)};
     ASSERT_TRUE(row_exp);
 
     auto const arch = ArchPkg::GenArch(dep_rels);
     ASSERT_TRUE(FileUtils::StoreToFile(arch_act, arch, StoreToStream));
 
-    auto row_act = std::optional<std::vector<std::string>>{
-        FileUtils::LoadFromFile(arch_act, FileUtils::Load_Strings)};
+    auto row_act = std::optional<std::vector<std::string>>{FileUtils::LoadFromFile(arch_act, FileUtils::Load_Strings)};
     ASSERT_TRUE(row_act);
 
     ASSERT_EQ(row_exp, *row_act);

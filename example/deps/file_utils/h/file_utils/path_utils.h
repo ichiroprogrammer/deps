@@ -13,12 +13,8 @@ std::string ToStringPath(Path_t const& paths);
 using Paths_t = std::list<std::filesystem::path>;
 
 Paths_t              NotDirs(Paths_t const& dirs);
-std::string          ToStringPaths(Paths_t const& paths, std::string_view sep = "\n",
-                                   std::string_view indent = "");
-inline std::ostream& operator<<(std::ostream& os, Paths_t const& paths)
-{
-    return os << ToStringPaths(paths);
-}
+std::string          ToStringPaths(Paths_t const& paths, std::string_view sep = "\n", std::string_view indent = "");
+inline std::ostream& operator<<(std::ostream& os, Paths_t const& paths) { return os << ToStringPaths(paths); }
 
 // first path:  filename
 // second path: pathname

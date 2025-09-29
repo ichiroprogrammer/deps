@@ -131,8 +131,7 @@ TEST(deps_scenario, SrcsGenerator)
     using FileUtils::Paths_t;
 
     {
-        auto sg = SrcsGenerator{
-            "", true, Paths_t{"ut_data/app1/mod2/mod2_1", "ut_data/app1/mod2/mod2_2"}, ""};
+        auto sg = SrcsGenerator{"", true, Paths_t{"ut_data/app1/mod2/mod2_1", "ut_data/app1/mod2/mod2_2"}, ""};
 
         // clang-format off
         auto exp = std::string {
@@ -172,8 +171,7 @@ TEST(deps_scenario, SrcsGenerator)
         ASSERT_EQ(exp, ss.str());
     }
     {
-        auto sg = SrcsGenerator{
-            "", true, Paths_t{"ut_data/app1/mod2/mod2_1", "ut_data/app1/mod2/mod2_2"}, ".*/mod2_2"};
+        auto sg = SrcsGenerator{"", true, Paths_t{"ut_data/app1/mod2/mod2_1", "ut_data/app1/mod2/mod2_2"}, ".*/mod2_2"};
 
         auto exp = std::string{
             "---\n"
@@ -205,8 +203,7 @@ TEST(deps_scenario, Pkg2SrcsGenerator)
     auto exception_occured = false;
 
     try {
-        auto p2sg
-            = Pkg2SrcsGenerator{"ut_data/app1/a_1_c.c", false, false, Paths_t{"ut_data/app3/"}, ""};
+        auto p2sg = Pkg2SrcsGenerator{"ut_data/app1/a_1_c.c", false, false, Paths_t{"ut_data/app3/"}, ""};
     }
     catch (std::runtime_error const& e) {
         exception_occured = true;
@@ -215,8 +212,7 @@ TEST(deps_scenario, Pkg2SrcsGenerator)
     ASSERT_TRUE(exception_occured);
 
     {
-        auto p2sg = Pkg2SrcsGenerator{"ut_data/load_store/pkg_org", true, false,
-                                      Paths_t{"ut_data/app3/"}, ""};
+        auto p2sg = Pkg2SrcsGenerator{"ut_data/load_store/pkg_org", true, false, Paths_t{"ut_data/app3/"}, ""};
 
         auto exp = std::string{
             "#dir2srcs\n"
@@ -259,8 +255,8 @@ TEST(deps_scenario, Pkg2SrcsGenerator)
         ASSERT_EQ(exp, ss.str());
     }
     {
-        auto p2sg = Pkg2SrcsGenerator{"ut_data/load_store/pkg_org", true, false,
-                                      Paths_t{"ut_data/app3/"}, ".*/mod2\\b.*"};
+        auto p2sg
+            = Pkg2SrcsGenerator{"ut_data/load_store/pkg_org", true, false, Paths_t{"ut_data/app3/"}, ".*/mod2\\b.*"};
 
         auto exp = std::string{
             "#dir2srcs\n"
@@ -297,8 +293,7 @@ TEST(deps_scenario, Pkg2SrcsGenerator)
         ASSERT_EQ(exp, ss.str());
     }
     {
-        auto p2sg = Pkg2SrcsGenerator{"ut_data/load_store/pkg_org", false, false,
-                                      Paths_t{"ut_data/app3/"}, ""};
+        auto p2sg = Pkg2SrcsGenerator{"ut_data/load_store/pkg_org", false, false, Paths_t{"ut_data/app3/"}, ""};
 
         auto exp = std::string{
             "#dir2srcs\n"
@@ -340,8 +335,8 @@ TEST(deps_scenario, Pkg2SrcsGenerator)
         ASSERT_EQ(exp, ss.str());
     }
     {
-        auto p2sg = Pkg2SrcsGenerator{"ut_data/load_store/pkg_org", false, false,
-                                      Paths_t{"ut_data/app3/"}, "ut_data/app2"};
+        auto p2sg
+            = Pkg2SrcsGenerator{"ut_data/load_store/pkg_org", false, false, Paths_t{"ut_data/app3/"}, "ut_data/app2"};
 
         auto exp = std::string{
             "#dir2srcs\n"
@@ -422,8 +417,7 @@ TEST(deps_scenario, Pkg2SrcsGenerator2)
             "    ut_data/app2/b_1.h\n"
             "\n"};
 
-        auto p2sg
-            = Pkg2SrcsGenerator{"ut_data/load_store/dirs2srcs_org", true, false, Paths_t{}, ""};
+        auto p2sg = Pkg2SrcsGenerator{"ut_data/load_store/dirs2srcs_org", true, false, Paths_t{}, ""};
 
         auto ss = std::ostringstream{};
 
@@ -528,8 +522,7 @@ TEST(deps_scenario, Pkg2PkgGenerator)
 
     auto exception_occured = false;
     try {
-        auto p2pg
-            = Pkg2PkgGenerator{"ut_data/app1/a_1_c.c", false, false, Paths_t{"ut_data/app3/"}, ""};
+        auto p2pg = Pkg2PkgGenerator{"ut_data/app1/a_1_c.c", false, false, Paths_t{"ut_data/app3/"}, ""};
     }
     catch (std::runtime_error const& e) {
         exception_occured = true;
@@ -538,8 +531,7 @@ TEST(deps_scenario, Pkg2PkgGenerator)
     ASSERT_TRUE(exception_occured);
 
     {
-        auto p2pg = Pkg2PkgGenerator{"ut_data/load_store/pkg_org", true, false,
-                                     Paths_t{"ut_data/app3/"}, ""};
+        auto p2pg = Pkg2PkgGenerator{"ut_data/load_store/pkg_org", true, false, Paths_t{"ut_data/app3/"}, ""};
 
         // clang-format off
         auto exp = std::string {
@@ -597,8 +589,8 @@ TEST(deps_scenario, Pkg2PkgGenerator)
         ASSERT_EQ(exp, ss.str());
     }
     {
-        auto p2pg = Pkg2PkgGenerator{"ut_data/load_store/pkg_org", true, false,
-                                     Paths_t{"ut_data/app3/"}, ".*/mod2\\b.*"};
+        auto p2pg
+            = Pkg2PkgGenerator{"ut_data/load_store/pkg_org", true, false, Paths_t{"ut_data/app3/"}, ".*/mod2\\b.*"};
 
         // clang-format off
         auto exp = std::string {
@@ -620,8 +612,7 @@ TEST(deps_scenario, Pkg2PkgGenerator)
         ASSERT_EQ(exp, ss.str());
     }
     {
-        auto p2pg = Pkg2PkgGenerator{"ut_data/load_store/pkg_org", false, false,
-                                     Paths_t{"ut_data/app3/"}, ""};
+        auto p2pg = Pkg2PkgGenerator{"ut_data/load_store/pkg_org", false, false, Paths_t{"ut_data/app3/"}, ""};
 
         // clang-format off
         auto exp = std::string {
@@ -664,8 +655,8 @@ TEST(deps_scenario, Pkg2PkgGenerator)
         ASSERT_EQ(exp, ss.str());
     }
     {
-        auto p2pg = Pkg2PkgGenerator{"ut_data/load_store/pkg_org", false, false,
-                                     Paths_t{"ut_data/app3/"}, "ut_data/app2"};
+        auto p2pg
+            = Pkg2PkgGenerator{"ut_data/load_store/pkg_org", false, false, Paths_t{"ut_data/app3/"}, "ut_data/app2"};
 
         // clang-format off
         auto exp = std::string {

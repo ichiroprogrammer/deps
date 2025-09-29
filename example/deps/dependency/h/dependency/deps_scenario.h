@@ -25,8 +25,8 @@ private:
 
 class SrcsGenerator : public ScenarioGenerator {
 public:
-    explicit SrcsGenerator(std::string const& in, bool recursive,
-                           FileUtils::Paths_t const& dirs_opt, std::string const& pattern);
+    explicit SrcsGenerator(std::string const& in, bool recursive, FileUtils::Paths_t const& dirs_opt,
+                           std::string const& pattern);
     virtual bool Output(std::ostream& os) const override;
 
 private:

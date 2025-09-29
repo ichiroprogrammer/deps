@@ -46,18 +46,12 @@ using DepRels_t = std::list<DepRelation>;
 
 std::string ToStringDepRel(DepRelation const& rep_rel);
 
-inline std::ostream& operator<<(std::ostream& os, DepRelation const& dep_rel)
-{
-    return os << ToStringDepRel(dep_rel);
-}
+inline std::ostream& operator<<(std::ostream& os, DepRelation const& dep_rel) { return os << ToStringDepRel(dep_rel); }
 
 Dir2Dir_t GenDir2Dir(std::string const& dirA, std::string const& dirB);
 
 std::string          ToStringDepRels(DepRels_t const& dep_rels);
-inline std::ostream& operator<<(std::ostream& os, DepRels_t const& dep_rels)
-{
-    return os << ToStringDepRels(dep_rels);
-}
+inline std::ostream& operator<<(std::ostream& os, DepRels_t const& dep_rels) { return os << ToStringDepRels(dep_rels); }
 
 DepRels_t                 GenDepRels(CppDirs_t const& dirs);
 DepRels_t::const_iterator FindDepRels(DepRels_t const& dep_rels, std::string const& dirA,

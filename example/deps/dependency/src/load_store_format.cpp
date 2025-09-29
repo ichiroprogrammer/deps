@@ -164,8 +164,7 @@ FileUtils::Paths_t gen_paths(std::string const& paths_str)
 
     if (paths_str.size() != 0) {
         auto end = std::sregex_token_iterator{};
-        for (auto it = std::sregex_token_iterator{paths_str.begin(), paths_str.end(), sep, -1};
-             it != end; ++it) {
+        for (auto it = std::sregex_token_iterator{paths_str.begin(), paths_str.end(), sep, -1}; it != end; ++it) {
             ret.emplace_back(it->str());
         }
     }

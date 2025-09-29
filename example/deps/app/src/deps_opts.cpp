@@ -116,12 +116,11 @@ DepsOpts::DepsOptsData DepsOpts::parse(int argc, char* const* argv)
         return data;
     }
 
-    optind = 2;
-    static struct option const opts[]
-        = {{"in", required_argument, 0, 'i'},      {"out", required_argument, 0, 'o'},
-           {"exclude", required_argument, 0, 'e'}, {"recursive", no_argument, 0, 'R'},
-           {"src_as_pkg", no_argument, 0, 's'},    {"log", required_argument, 0, 'l'},
-           {"help", no_argument, 0, 'h'},          {0, 0, 0, 0}};
+    optind                            = 2;
+    static struct option const opts[] = {{"in", required_argument, 0, 'i'},      {"out", required_argument, 0, 'o'},
+                                         {"exclude", required_argument, 0, 'e'}, {"recursive", no_argument, 0, 'R'},
+                                         {"src_as_pkg", no_argument, 0, 's'},    {"log", required_argument, 0, 'l'},
+                                         {"help", no_argument, 0, 'h'},          {0, 0, 0, 0}};
 
     for (;;) {
         auto opt_char = getopt_long(argc, argv, "i:o:e:l:Rsh", opts, nullptr);
@@ -179,8 +178,7 @@ std::string ToStringDepsOpts(DepsOpts const& deps_opts, std::string_view indent)
     ss << indent << "recursive : " << deps_opts.IsRecursive() << std::endl;
     ss << indent << "src_as_pkg: " << deps_opts.IsSrcPkg() << std::endl;
     ss << indent << "log       : " << deps_opts.Log() << std::endl;
-    ss << indent << "dirs      : " << FileUtils::ToStringPaths(deps_opts.Dirs(), "\n" + indent2)
-       << std::endl;
+    ss << indent << "dirs      : " << FileUtils::ToStringPaths(deps_opts.Dirs(), "\n" + indent2) << std::endl;
     ss << indent << "exclude   : " << deps_opts.Exclude() << std::endl;
     ss << indent << "parsed    : " << !!deps_opts;
 

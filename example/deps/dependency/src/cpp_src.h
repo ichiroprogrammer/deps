@@ -26,12 +26,9 @@ private:
 };
 
 using CppSrcs_t = std::vector<CppSrc>;
-CppSrcs_t   GenCppSrc(FileUtils::Paths_t const& srcs, FileUtils::Filename2Path_t const& db);
-std::string ToStringCppSrc(CppSrc const& cpp_src);
-inline std::ostream& operator<<(std::ostream& os, CppSrc const& cpp_src)
-{
-    return os << ToStringCppSrc(cpp_src);
-}
+CppSrcs_t            GenCppSrc(FileUtils::Paths_t const& srcs, FileUtils::Filename2Path_t const& db);
+std::string          ToStringCppSrc(CppSrc const& cpp_src);
+inline std::ostream& operator<<(std::ostream& os, CppSrc const& cpp_src) { return os << ToStringCppSrc(cpp_src); }
 
 // first  dirs配下のソースファイルを含むディレクトリ
 // second dirs配下のソースファイル

@@ -33,8 +33,8 @@ FileUtils::Paths_t get_incs(FileUtils::Path_t const& src)
     return ret;
 }
 
-void get_incs_full(FileUtils::Filename2Path_t const& db, FileUtils::Path_t const& src,
-                   FileUtils::Paths_t& incs, FileUtils::Paths_t& not_found, bool sort_uniq)
+void get_incs_full(FileUtils::Filename2Path_t const& db, FileUtils::Path_t const& src, FileUtils::Paths_t& incs,
+                   FileUtils::Paths_t& not_found, bool sort_uniq)
 {
     auto const inc_files = get_incs(src);
 
@@ -44,9 +44,8 @@ void get_incs_full(FileUtils::Filename2Path_t const& db, FileUtils::Path_t const
         }
         else {
             auto full_path = db.at(f);
-            if (!any_of(
-                    incs.cbegin(), incs.cend(),
-                    [&full_path](FileUtils::Path_t const& p) noexcept { return p == full_path; })) {
+            if (!any_of(incs.cbegin(), incs.cend(),
+                        [&full_path](FileUtils::Path_t const& p) noexcept { return p == full_path; })) {
                 incs.emplace_back(full_path);
                 get_incs_full(db, full_path, incs, not_found, false);
             }
@@ -63,10 +62,7 @@ void get_incs_full(FileUtils::Filename2Path_t const& db, FileUtils::Path_t const
 namespace Dependency {
 
 CppSrc::CppSrc(FileUtils::Path_t const& pathname, FileUtils::Filename2Path_t const& db)
-    : path_{FileUtils::NormalizeLexically(pathname)},
-      filename_{path_.filename()},
-      incs_{},
-      not_found_{}
+    : path_{FileUtils::NormalizeLexically(pathname)}, filename_{path_.filename()}, incs_{}, not_found_{}
 {
     get_incs_full(db, pathname, incs_, not_found_, true);
 }
@@ -89,8 +85,7 @@ std::string ToStringCppSrc(CppSrc const& cpp_src)
     ss << "file              : " << FileUtils::ToStringPath(cpp_src.Filename()) << std::endl;
     ss << "path              : " << FileUtils::ToStringPath(cpp_src.Path()) << std::endl;
     ss << "include           : " << FileUtils::ToStringPaths(cpp_src.GetIncs(), " ") << std::endl;
-    ss << "include not found : " << FileUtils::ToStringPaths(cpp_src.GetIncsNotFound(), " ")
-       << std::endl;
+    ss << "include not found : " << FileUtils::ToStringPaths(cpp_src.GetIncsNotFound(), " ") << std::endl;
 
     return ss.str();
 }
@@ -112,12 +107,11 @@ bool is_c_or_cpp(std::string ext)
 
 FileUtils::Paths_t gen_dirs(FileUtils::Path_t const& top_dir, FileUtils::Paths_t const& srcs)
 {
-    auto dirs           = FileUtils::Paths_t{top_dir};
+    auto       dirs     = FileUtils::Paths_t{top_dir};
     auto const top_dir2 = FileUtils::Path_t{""};  // top_dirが"."の場合、parent_path()は""になる}。
 
     for (auto const& src : srcs) {
-        for (auto dir = src.parent_path(); dir != top_dir && dir != top_dir2;
-             dir      = dir.parent_path()) {
+        for (auto dir = src.parent_path(); dir != top_dir && dir != top_dir2; dir = dir.parent_path()) {
             dirs.push_back(dir);
         }
     }

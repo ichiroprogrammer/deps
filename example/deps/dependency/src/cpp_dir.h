@@ -10,10 +10,7 @@ namespace Dependency {
 
 class CppDir {
 public:
-    explicit CppDir(FileUtils::Path_t const& path, CppSrcs_t&& srcs)
-        : path_{path}, srcs_{std::move(srcs)}
-    {
-    }
+    explicit CppDir(FileUtils::Path_t const& path, CppSrcs_t&& srcs) : path_{path}, srcs_{std::move(srcs)} {}
 
     FileUtils::Path_t const& Path() const noexcept { return path_; }
     bool                     Contains(FileUtils::Path_t const& inc_path) const noexcept;
@@ -36,8 +33,5 @@ using CppDirs_t = std::vector<CppDir>;
 CppDirs_t GenCppDirs(FileUtils::Paths_t const& srcs, FileUtils::Filename2Path_t const& db);
 
 std::string          ToStringCppDir(CppDir const& cpp_pack);
-inline std::ostream& operator<<(std::ostream& os, CppDir const& dir)
-{
-    return os << ToStringCppDir(dir);
-}
+inline std::ostream& operator<<(std::ostream& os, CppDir const& dir) { return os << ToStringCppDir(dir); }
 }  // namespace Dependency

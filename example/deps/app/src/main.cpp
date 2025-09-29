@@ -48,21 +48,19 @@ try {
     switch (opt.GetCmd()) {
     case App::DepsOpts::Cmd::GenPkg:
         LOGGER("start GenPkg");
-        return std::make_unique<PkgGenerator>(opt.In(), opt.IsRecursive(), opt.Dirs(),
-                                              opt.Exclude());
+        return std::make_unique<PkgGenerator>(opt.In(), opt.IsRecursive(), opt.Dirs(), opt.Exclude());
     case App::DepsOpts::Cmd::GenSrc:
         LOGGER("start GenPkg");
-        return std::make_unique<SrcsGenerator>(opt.In(), opt.IsRecursive(), opt.Dirs(),
-                                               opt.Exclude());
+        return std::make_unique<SrcsGenerator>(opt.In(), opt.IsRecursive(), opt.Dirs(), opt.Exclude());
     // @@@ ignore begin
     case App::DepsOpts::Cmd::GenPkg2Srcs:
         LOGGER("start GenPkg2Srcs");
-        return std::make_unique<Pkg2SrcsGenerator>(opt.In(), opt.IsRecursive(), opt.IsSrcPkg(),
-                                                   opt.Dirs(), opt.Exclude());
+        return std::make_unique<Pkg2SrcsGenerator>(opt.In(), opt.IsRecursive(), opt.IsSrcPkg(), opt.Dirs(),
+                                                   opt.Exclude());
     case App::DepsOpts::Cmd::GenPkg2Pkg:
         LOGGER("start GenPkg2Pkg");
-        return std::make_unique<Pkg2PkgGenerator>(opt.In(), opt.IsRecursive(), opt.IsSrcPkg(),
-                                                  opt.Dirs(), opt.Exclude());
+        return std::make_unique<Pkg2PkgGenerator>(opt.In(), opt.IsRecursive(), opt.IsSrcPkg(), opt.Dirs(),
+                                                  opt.Exclude());
     case App::DepsOpts::Cmd::GenArch:
         LOGGER("start GenArch");
         return std::make_unique<ArchGenerator>(opt.In());

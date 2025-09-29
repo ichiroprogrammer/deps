@@ -78,8 +78,8 @@ struct exists_put_to_as_member : std::false_type {
 };
 
 template <typename T>
-struct exists_put_to_as_member<T, decltype(std::declval<std::ostream&>().operator<<(
-                                      std::declval<T>()))> : std::true_type {
+struct exists_put_to_as_member<T, decltype(std::declval<std::ostream&>().operator<<(std::declval<T>()))>
+    : std::true_type {
 };
 
 template <typename T>
@@ -93,8 +93,8 @@ struct exists_put_to_as_non_member : std::false_type {
 };
 
 template <typename T>
-struct exists_put_to_as_non_member<T, decltype(operator<<(std::declval<std::ostream&>(),
-                                                          std::declval<T>()))> : std::true_type {
+struct exists_put_to_as_non_member<T, decltype(operator<<(std::declval<std::ostream&>(), std::declval<T>()))>
+    : std::true_type {
 };
 
 template <typename T>
@@ -115,8 +115,7 @@ struct is_range : std::false_type {
 };
 
 template <typename T>
-struct is_range<T, typename std::enable_if_t<!std::is_array_v<T>,
-                                             decltype(std::begin(std::declval<T>()), bool{})>>
+struct is_range<T, typename std::enable_if_t<!std::is_array_v<T>, decltype(std::begin(std::declval<T>()), bool{})>>
     : std::true_type {
 };
 

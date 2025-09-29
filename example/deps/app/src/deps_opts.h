@@ -53,9 +53,6 @@ private:
 // @@@ sample begin 0:0
 
 std::string          ToStringDepsOpts(DepsOpts const& deps_opts, std::string_view indent = "");
-inline std::ostream& operator<<(std::ostream& os, DepsOpts const& opts)
-{
-    return os << ToStringDepsOpts(opts);
-}
+inline std::ostream& operator<<(std::ostream& os, DepsOpts const& opts) { return os << ToStringDepsOpts(opts); }
 // @@@ sample end
 }  // namespace App

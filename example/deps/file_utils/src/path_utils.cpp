@@ -127,8 +127,7 @@ Paths_t gen_parent_dirs(Path_t const dir)
 {
     auto ret = Paths_t{};
 
-    for (auto p = dir.parent_path(), pp = p.parent_path(); !p.empty() && p != pp;
-         p = pp, pp = p.parent_path()) {
+    for (auto p = dir.parent_path(), pp = p.parent_path(); !p.empty() && p != pp; p = pp, pp = p.parent_path()) {
         ret.push_front(p);
     }
 
