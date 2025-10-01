@@ -4,6 +4,7 @@ readonly BASE_DIR=$(cd $(dirname $0); pwd)
 readonly BASENAME="$(basename $0)"
 
 # @@@ sample begin 0:0
+
 function help(){
     echo "$BASENAME  [option]"
     echo "    -a BIN : BIN is test target(default:./g++/deps)"
